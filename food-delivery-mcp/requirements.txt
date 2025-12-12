@@ -4,4 +4,5 @@ uiautomator2>=3.0.0
 pyyaml>=6.0
 httpx>=0.25.0
 pydantic>=2.5.0
-
+sse-starlette>=2.0.0  # For SSE (Server-Sent Events) support
+mcp>=1.0.0  # MCP protocol support
