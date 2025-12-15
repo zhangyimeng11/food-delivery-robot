@@ -1,0 +1,1742 @@
+{
+  "timestamp": "2025-12-15T11:10:13.492338",
+  "step": "04_phf_page",
+  "action": "拼好饭页面",
+  "elements_count": 289,
+  "elements": [
+    {
+      "index": 1,
+      "text": "android.widget.FrameLayout",
+      "bounds": "0,0,1080,2400",
+      "className": "FrameLayout"
+    },
+    {
+      "index": 2,
+      "text": "android.webkit.WebView",
+      "bounds": "0,0,1080,2268",
+      "className": "WebView"
+    },
+    {
+      "index": 3,
+      "text": "android.webkit.WebView",
+      "bounds": "0,0,1080,2268",
+      "className": "WebView"
+    },
+    {
+      "index": 4,
+      "text": "android.view.View",
+      "bounds": "0,0,1080,2268",
+      "className": "View"
+    },
+    {
+      "index": 5,
+      "text": "rocksContainer",
+      "bounds": "0,0,1080,2268",
+      "className": "View"
+    },
+    {
+      "index": 6,
+      "text": "wm_special_price_home_frame",
+      "bounds": "0,0,1080,2268",
+      "className": "View"
+    },
+    {
+      "index": 7,
+      "text": "wm_special_price_home_background",
+      "bounds": "0,0,1080,1275",
+      "className": "View"
+    },
+    {
+      "index": 8,
+      "text": "android.view.View",
+      "bounds": "0,0,1080,1275",
+      "className": "View"
+    },
+    {
+      "index": 9,
+      "text": "android.widget.TextView",
+      "bounds": "0,0,1080,1275",
+      "className": "TextView"
+    },
+    {
+      "index": 10,
+      "text": "android.view.View",
+      "bounds": "0,0,1080,315",
+      "className": "View"
+    },
+    {
+      "index": 11,
+      "text": "android.view.View",
+      "bounds": "0,0,1080,315",
+      "className": "View"
+    },
+    {
+      "index": 12,
+      "text": "android.view.View",
+      "bounds": "0,0,1080,315",
+      "className": "View"
+    },
+    {
+      "index": 13,
+      "text": "android.view.View",
+      "bounds": "0,108,1080,321",
+      "className": "View"
+    },
+    {
+      "index": 14,
+      "text": "android.view.View",
+      "bounds": "27,141,1047,198",
+      "className": "View"
+    },
+    {
+      "index": 15,
+      "text": "android.view.View",
+      "bounds": "21,141,84,207",
+      "className": "View"
+    },
+    {
+      "index": 16,
+      "text": "android.view.View",
+      "bounds": "21,141,84,207",
+      "className": "View"
+    },
+    {
+      "index": 17,
+      "text": "android.widget.Image",
+      "bounds": "21,141,84,207",
+      "className": "Image"
+    },
+    {
+      "index": 18,
+      "text": "android.view.View",
+      "bounds": "27,141,1047,198",
+      "className": "View"
+    },
+    {
+      "index": 19,
+      "text": "android.view.View",
+      "bounds": "90,141,990,198",
+      "className": "View"
+    },
+    {
+      "index": 20,
+      "text": "android.widget.Image",
+      "bounds": "90,141,387,198",
+      "className": "Image"
+    },
+    {
+      "index": 21,
+      "text": "android.view.View",
+      "bounds": "387,144,693,195",
+      "className": "View"
+    },
+    {
+      "index": 22,
+      "text": "android.view.View",
+      "bounds": "387,144,693,195",
+      "className": "View"
+    },
+    {
+      "index": 23,
+      "text": "android.widget.Image",
+      "bounds": "390,147,435,192",
+      "className": "Image"
+    },
+    {
+      "index": 24,
+      "text": "五道口购物中心",
+      "bounds": "438,144,660,195",
+      "className": "TextView"
+    },
+    {
+      "index": 25,
+      "text": "android.widget.Image",
+      "bounds": "660,153,693,186",
+      "className": "Image"
+    },
+    {
+      "index": 26,
+      "text": "android.view.View",
+      "bounds": "27,198,1047,288",
+      "className": "View"
+    },
+    {
+      "index": 27,
+      "text": "android.widget.Image",
+      "bounds": "27,207,375,279",
+      "className": "Image"
+    },
+    {
+      "index": 28,
+      "text": "android.view.View",
+      "bounds": "375,204,1047,282",
+      "className": "View"
+    },
+    {
+      "index": 29,
+      "text": "android.view.View",
+      "bounds": "375,225,1047,273",
+      "className": "View"
+    },
+    {
+      "index": 30,
+      "text": "android.view.View",
+      "bounds": "375,225,1047,273",
+      "className": "View"
+    },
+    {
+      "index": 31,
+      "text": "android.view.View",
+      "bounds": "375,225,1047,273",
+      "className": "View"
+    },
+    {
+      "index": 32,
+      "text": "android.view.View",
+      "bounds": "375,225,1047,273",
+      "className": "View"
+    },
+    {
+      "index": 33,
+      "text": "android.view.View",
+      "bounds": "375,225,1047,273",
+      "className": "View"
+    },
+    {
+      "index": 34,
+      "text": "android.view.View",
+      "bounds": "396,228,615,270",
+      "className": "View"
+    },
+    {
+      "index": 35,
+      "text": "为何这么实惠",
+      "bounds": "435,228,615,270",
+      "className": "TextView"
+    },
+    {
+      "index": 36,
+      "text": "android.view.View",
+      "bounds": "375,273,1047,321",
+      "className": "View"
+    },
+    {
+      "index": 37,
+      "text": "android.view.View",
+      "bounds": "396,276,675,318",
+      "className": "View"
+    },
+    {
+      "index": 38,
+      "text": "90%商家有食安险",
+      "bounds": "435,276,675,318",
+      "className": "TextView"
+    },
+    {
+      "index": 39,
+      "text": "android.view.View",
+      "bounds": "375,321,1047,369",
+      "className": "View"
+    },
+    {
+      "index": 40,
+      "text": "android.view.View",
+      "bounds": "396,324,645,366",
+      "className": "View"
+    },
+    {
+      "index": 41,
+      "text": "超百万用户评价",
+      "bounds": "435,324,645,366",
+      "className": "TextView"
+    },
+    {
+      "index": 42,
+      "text": "android.view.View",
+      "bounds": "375,369,1047,417",
+      "className": "View"
+    },
+    {
+      "index": 43,
+      "text": "android.view.View",
+      "bounds": "396,372,681,414",
+      "className": "View"
+    },
+    {
+      "index": 44,
+      "text": "超20万品牌店入驻",
+      "bounds": "435,372,681,414",
+      "className": "TextView"
+    },
+    {
+      "index": 45,
+      "text": "android.view.View",
+      "bounds": "375,129,1047,177",
+      "className": "View"
+    },
+    {
+      "index": 46,
+      "text": "android.view.View",
+      "bounds": "396,132,657,174",
+      "className": "View"
+    },
+    {
+      "index": 47,
+      "text": "北京已巡700+店",
+      "bounds": "435,132,657,174",
+      "className": "TextView"
+    },
+    {
+      "index": 48,
+      "text": "android.view.View",
+      "bounds": "375,177,1047,225",
+      "className": "View"
+    },
+    {
+      "index": 49,
+      "text": "android.view.View",
+      "bounds": "396,180,702,222",
+      "className": "View"
+    },
+    {
+      "index": 50,
+      "text": "北京100+品牌商品...",
+      "bounds": "435,180,702,222",
+      "className": "TextView"
+    },
+    {
+      "index": 51,
+      "text": "android.view.View",
+      "bounds": "969,111,1053,168",
+      "className": "View"
+    },
+    {
+      "index": 52,
+      "text": "android.widget.Image",
+      "bounds": "996,111,1053,168",
+      "className": "Image"
+    },
+    {
+      "index": 53,
+      "text": "android.view.View",
+      "bounds": "693,123,1047,315",
+      "className": "View"
+    },
+    {
+      "index": 54,
+      "text": "android.widget.Image",
+      "bounds": "693,123,1047,315",
+      "className": "Image"
+    },
+    {
+      "index": 55,
+      "text": "android.view.View",
+      "bounds": "0,315,1080,426",
+      "className": "View"
+    },
+    {
+      "index": 56,
+      "text": "android.view.View",
+      "bounds": "0,315,1074,429",
+      "className": "View"
+    },
+    {
+      "index": 57,
+      "text": "android.view.View",
+      "bounds": "0,315,1074,429",
+      "className": "View"
+    },
+    {
+      "index": 58,
+      "text": "android.widget.TextView",
+      "bounds": "33,315,1041,411",
+      "className": "TextView"
+    },
+    {
+      "index": 59,
+      "text": "android.view.View",
+      "bounds": "0,315,1080,426",
+      "className": "View"
+    },
+    {
+      "index": 60,
+      "text": "android.view.View",
+      "bounds": "0,315,1080,426",
+      "className": "View"
+    },
+    {
+      "index": 61,
+      "text": "search-input",
+      "bounds": "27,315,1053,411",
+      "className": "View"
+    },
+    {
+      "index": 62,
+      "text": "android.widget.Image",
+      "bounds": "60,339,105,387",
+      "className": "Image"
+    },
+    {
+      "index": 63,
+      "text": "android.view.View",
+      "bounds": "111,315,1047,411",
+      "className": "View"
+    },
+    {
+      "index": 64,
+      "text": "android.view.View",
+      "bounds": "111,315,1047,387",
+      "className": "View"
+    },
+    {
+      "index": 65,
+      "text": "android.view.View",
+      "bounds": "111,315,1047,387",
+      "className": "View"
+    },
+    {
+      "index": 66,
+      "text": "android.view.View",
+      "bounds": "111,315,1047,387",
+      "className": "View"
+    },
+    {
+      "index": 67,
+      "text": "android.view.View",
+      "bounds": "111,315,1047,387",
+      "className": "View"
+    },
+    {
+      "index": 68,
+      "text": "柠檬茶",
+      "bounds": "111,315,1047,411",
+      "className": "TextView"
+    },
+    {
+      "index": 69,
+      "text": "android.view.View",
+      "bounds": "111,387,1047,459",
+      "className": "View"
+    },
+    {
+      "index": 70,
+      "text": "麻辣香锅",
+      "bounds": "111,399,1047,495",
+      "className": "TextView"
+    },
+    {
+      "index": 71,
+      "text": "android.view.View",
+      "bounds": "111,459,1047,531",
+      "className": "View"
+    },
+    {
+      "index": 72,
+      "text": "咖啡",
+      "bounds": "111,471,1047,567",
+      "className": "TextView"
+    },
+    {
+      "index": 73,
+      "text": "android.view.View",
+      "bounds": "111,171,1047,243",
+      "className": "View"
+    },
+    {
+      "index": 74,
+      "text": "麻婆豆腐",
+      "bounds": "111,183,1047,279",
+      "className": "TextView"
+    },
+    {
+      "index": 75,
+      "text": "android.view.View",
+      "bounds": "111,243,1047,315",
+      "className": "View"
+    },
+    {
+      "index": 76,
+      "text": "生煎",
+      "bounds": "111,255,1047,351",
+      "className": "TextView"
+    },
+    {
+      "index": 77,
+      "text": "搜索",
+      "bounds": "897,336,1008,387",
+      "className": "TextView"
+    },
+    {
+      "index": 78,
+      "text": "android.view.View",
+      "bounds": "0,426,1080,1275",
+      "className": "View"
+    },
+    {
+      "index": 79,
+      "text": "android.view.View",
+      "bounds": "0,426,1080,1275",
+      "className": "View"
+    },
+    {
+      "index": 80,
+      "text": "android.view.View",
+      "bounds": "0,426,1080,1275",
+      "className": "View"
+    },
+    {
+      "index": 81,
+      "text": "android.widget.TextView",
+      "bounds": "30,426,1050,972",
+      "className": "TextView"
+    },
+    {
+      "index": 82,
+      "text": "android.widget.TextView",
+      "bounds": "30,993,531,1272",
+      "className": "TextView"
+    },
+    {
+      "index": 83,
+      "text": "android.widget.TextView",
+      "bounds": "549,993,1050,1272",
+      "className": "TextView"
+    },
+    {
+      "index": 84,
+      "text": "android.view.View",
+      "bounds": "0,426,1080,1269",
+      "className": "View"
+    },
+    {
+      "index": 85,
+      "text": "android.view.View",
+      "bounds": "0,426,1080,1269",
+      "className": "View"
+    },
+    {
+      "index": 86,
+      "text": "android.view.View",
+      "bounds": "57,459,297,510",
+      "className": "View"
+    },
+    {
+      "index": 87,
+      "text": "mmp-phoenix-image-nopreview",
+      "bounds": "57,459,297,510",
+      "className": "View"
+    },
+    {
+      "index": 88,
+      "text": "android.widget.Image",
+      "bounds": "57,459,297,510",
+      "className": "Image"
+    },
+    {
+      "index": 89,
+      "text": "android.view.View",
+      "bounds": "312,459,582,510",
+      "className": "View"
+    },
+    {
+      "index": 90,
+      "text": "android.view.View",
+      "bounds": "312,459,582,510",
+      "className": "View"
+    },
+    {
+      "index": 91,
+      "text": "mmp-phoenix-image-nopreview",
+      "bounds": "312,459,582,510",
+      "className": "View"
+    },
+    {
+      "index": 92,
+      "text": "android.widget.Image",
+      "bounds": "312,459,582,510",
+      "className": "Image"
+    },
+    {
+      "index": 93,
+      "text": "android.view.View",
+      "bounds": "939,462,1023,507",
+      "className": "View"
+    },
+    {
+      "index": 94,
+      "text": "更多",
+      "bounds": "939,462,1005,507",
+      "className": "TextView"
+    },
+    {
+      "index": 95,
+      "text": "android.widget.Image",
+      "bounds": "1008,471,1023,498",
+      "className": "Image"
+    },
+    {
+      "index": 96,
+      "text": "android.view.View",
+      "bounds": "57,531,279,753",
+      "className": "View"
+    },
+    {
+      "index": 97,
+      "text": "android.view.View",
+      "bounds": "57,531,279,753",
+      "className": "View"
+    },
+    {
+      "index": 98,
+      "text": "mmp-phoenix-image-nopreview",
+      "bounds": "57,531,279,753",
+      "className": "View"
+    },
+    {
+      "index": 99,
+      "text": "android.widget.Image",
+      "bounds": "57,531,279,753",
+      "className": "Image"
+    },
+    {
+      "index": 100,
+      "text": "冰鲜柠檬水",
+      "bounds": "57,768,279,813",
+      "className": "TextView"
+    },
+    {
+      "index": 101,
+      "text": "已补5.5元",
+      "bounds": "57,816,279,873",
+      "className": "TextView"
+    },
+    {
+      "index": 102,
+      "text": "一口价",
+      "bounds": "72,888,153,927",
+      "className": "TextView"
+    },
+    {
+      "index": 103,
+      "text": "¥5.9",
+      "bounds": "189,882,258,933",
+      "className": "TextView"
+    },
+    {
+      "index": 104,
+      "text": "android.view.View",
+      "bounds": "303,531,525,753",
+      "className": "View"
+    },
+    {
+      "index": 105,
+      "text": "android.view.View",
+      "bounds": "303,531,525,753",
+      "className": "View"
+    },
+    {
+      "index": 106,
+      "text": "mmp-phoenix-image-nopreview",
+      "bounds": "303,531,525,753",
+      "className": "View"
+    },
+    {
+      "index": 107,
+      "text": "android.widget.Image",
+      "bounds": "303,531,525,753",
+      "className": "Image"
+    },
+    {
+      "index": 108,
+      "text": "咔滋脆鸡肉堡+辣味鸡肉卷+中可乐",
+      "bounds": "303,768,525,813",
+      "className": "TextView"
+    },
+    {
+      "index": 109,
+      "text": "已补7.9元",
+      "bounds": "303,816,525,873",
+      "className": "TextView"
+    },
+    {
+      "index": 110,
+      "text": "一口价",
+      "bounds": "318,888,399,927",
+      "className": "TextView"
+    },
+    {
+      "index": 111,
+      "text": "¥14.9",
+      "bounds": "426,882,513,933",
+      "className": "TextView"
+    },
+    {
+      "index": 112,
+      "text": "android.view.View",
+      "bounds": "549,531,771,753",
+      "className": "View"
+    },
+    {
+      "index": 113,
+      "text": "android.view.View",
+      "bounds": "549,531,771,753",
+      "className": "View"
+    },
+    {
+      "index": 114,
+      "text": "mmp-phoenix-image-nopreview",
+      "bounds": "549,531,771,753",
+      "className": "View"
+    },
+    {
+      "index": 115,
+      "text": "android.widget.Image",
+      "bounds": "549,531,771,753",
+      "className": "Image"
+    },
+    {
+      "index": 116,
+      "text": "香辣鸡腿中国汉堡+冰柠可乐",
+      "bounds": "549,768,771,813",
+      "className": "TextView"
+    },
+    {
+      "index": 117,
+      "text": "已补7.9元",
+      "bounds": "549,816,771,873",
+      "className": "TextView"
+    },
+    {
+      "index": 118,
+      "text": "一口价",
+      "bounds": "564,888,645,927",
+      "className": "TextView"
+    },
+    {
+      "index": 119,
+      "text": "¥10.9",
+      "bounds": "675,882,756,933",
+      "className": "TextView"
+    },
+    {
+      "index": 120,
+      "text": "android.view.View",
+      "bounds": "795,531,1017,753",
+      "className": "View"
+    },
+    {
+      "index": 121,
+      "text": "android.view.View",
+      "bounds": "795,531,1017,753",
+      "className": "View"
+    },
+    {
+      "index": 122,
+      "text": "mmp-phoenix-image-nopreview",
+      "bounds": "795,531,1017,753",
+      "className": "View"
+    },
+    {
+      "index": 123,
+      "text": "android.widget.Image",
+      "bounds": "795,531,1017,753",
+      "className": "Image"
+    },
+    {
+      "index": 124,
+      "text": "橙C美式",
+      "bounds": "795,768,1017,813",
+      "className": "TextView"
+    },
+    {
+      "index": 125,
+      "text": "已补8.9元",
+      "bounds": "795,816,1017,873",
+      "className": "TextView"
+    },
+    {
+      "index": 126,
+      "text": "一口价",
+      "bounds": "810,888,891,927",
+      "className": "TextView"
+    },
+    {
+      "index": 127,
+      "text": "¥6.9",
+      "bounds": "927,882,996,933",
+      "className": "TextView"
+    },
+    {
+      "index": 128,
+      "text": "android.view.View",
+      "bounds": "30,981,528,1269",
+      "className": "View"
+    },
+    {
+      "index": 129,
+      "text": "android.widget.Image",
+      "bounds": "60,1017,231,1056",
+      "className": "Image"
+    },
+    {
+      "index": 130,
+      "text": "android.widget.Image",
+      "bounds": "243,1020,396,1053",
+      "className": "Image"
+    },
+    {
+      "index": 131,
+      "text": "android.view.View",
+      "bounds": "60,1083,267,1236",
+      "className": "View"
+    },
+    {
+      "index": 132,
+      "text": "android.view.View",
+      "bounds": "60,1083,267,1236",
+      "className": "View"
+    },
+    {
+      "index": 133,
+      "text": "android.widget.Image",
+      "bounds": "60,1083,267,1236",
+      "className": "Image"
+    },
+    {
+      "index": 134,
+      "text": "android.view.View",
+      "bounds": "288,1083,495,1236",
+      "className": "View"
+    },
+    {
+      "index": 135,
+      "text": "android.view.View",
+      "bounds": "288,1083,495,1236",
+      "className": "View"
+    },
+    {
+      "index": 136,
+      "text": "android.widget.Image",
+      "bounds": "288,1083,495,1236",
+      "className": "Image"
+    },
+    {
+      "index": 137,
+      "text": "android.view.View",
+      "bounds": "552,981,1050,1269",
+      "className": "View"
+    },
+    {
+      "index": 138,
+      "text": "android.widget.Image",
+      "bounds": "582,1017,747,1056",
+      "className": "Image"
+    },
+    {
+      "index": 139,
+      "text": "android.widget.Image",
+      "bounds": "759,1020,897,1053",
+      "className": "Image"
+    },
+    {
+      "index": 140,
+      "text": "android.view.View",
+      "bounds": "582,1083,789,1236",
+      "className": "View"
+    },
+    {
+      "index": 141,
+      "text": "android.view.View",
+      "bounds": "582,1083,789,1236",
+      "className": "View"
+    },
+    {
+      "index": 142,
+      "text": "android.widget.Image",
+      "bounds": "582,1083,789,1236",
+      "className": "Image"
+    },
+    {
+      "index": 143,
+      "text": "android.view.View",
+      "bounds": "810,1083,1017,1236",
+      "className": "View"
+    },
+    {
+      "index": 144,
+      "text": "android.view.View",
+      "bounds": "810,1083,1017,1236",
+      "className": "View"
+    },
+    {
+      "index": 145,
+      "text": "android.widget.Image",
+      "bounds": "810,1083,1017,1236",
+      "className": "Image"
+    },
+    {
+      "index": 146,
+      "text": "wm_special_price_home_newuser_privilege_display",
+      "bounds": "0,1275,1080,1365",
+      "className": "View"
+    },
+    {
+      "index": 147,
+      "text": "mealCardBannerId",
+      "bounds": "0,1275,1080,1365",
+      "className": "View"
+    },
+    {
+      "index": 148,
+      "text": "android.view.View",
+      "bounds": "0,1275,1080,1365",
+      "className": "View"
+    },
+    {
+      "index": 149,
+      "text": "midas-id-19b1ffca95b1d5f44a6a",
+      "bounds": "30,1275,1050,1365",
+      "className": "View"
+    },
+    {
+      "index": 150,
+      "text": "android.view.View",
+      "bounds": "45,1293,129,1347",
+      "className": "View"
+    },
+    {
+      "index": 151,
+      "text": "mmp-phoenix-image-nopreview",
+      "bounds": "45,1293,129,1347",
+      "className": "View"
+    },
+    {
+      "index": 152,
+      "text": "android.widget.Image",
+      "bounds": "45,1293,129,1347",
+      "className": "Image"
+    },
+    {
+      "index": 153,
+      "text": "8.9",
+      "bounds": "135,1275,219,1365",
+      "className": "TextView"
+    },
+    {
+      "index": 154,
+      "text": "元畅吃",
+      "bounds": "216,1275,318,1365",
+      "className": "TextView"
+    },
+    {
+      "index": 155,
+      "text": "android.view.View",
+      "bounds": "336,1305,342,1335",
+      "className": "View"
+    },
+    {
+      "index": 156,
+      "text": "mmp-phoenix-image-nopreview",
+      "bounds": "336,1305,342,1335",
+      "className": "View"
+    },
+    {
+      "index": 157,
+      "text": "android.widget.Image",
+      "bounds": "336,1305,342,1335",
+      "className": "Image"
+    },
+    {
+      "index": 158,
+      "text": "4天后失效",
+      "bounds": "357,1275,510,1365",
+      "className": "TextView"
+    },
+    {
+      "index": 159,
+      "text": "去使用",
+      "bounds": "918,1299,1011,1341",
+      "className": "TextView"
+    },
+    {
+      "index": 160,
+      "text": "android.view.View",
+      "bounds": "0,1365,1080,2268",
+      "className": "View"
+    },
+    {
+      "index": 161,
+      "text": "feedModule",
+      "bounds": "0,1365,1080,2268",
+      "className": "View"
+    },
+    {
+      "index": 162,
+      "text": "filter-container",
+      "bounds": "0,1365,1080,1668",
+      "className": "View"
+    },
+    {
+      "index": 163,
+      "text": "category",
+      "bounds": "0,1365,1080,1560",
+      "className": "View"
+    },
+    {
+      "index": 164,
+      "text": "midas-id-19b1ffca95c13db21eac",
+      "bounds": "0,1365,159,1560",
+      "className": "View"
+    },
+    {
+      "index": 165,
+      "text": "android.view.View",
+      "bounds": "33,1392,111,1470",
+      "className": "View"
+    },
+    {
+      "index": 166,
+      "text": "android.widget.Image",
+      "bounds": "33,1392,111,1470",
+      "className": "Image"
+    },
+    {
+      "index": 167,
+      "text": "推荐",
+      "bounds": "27,1476,117,1527",
+      "className": "TextView"
+    },
+    {
+      "index": 168,
+      "text": "midas-id-19b1ffca95d23c59401e",
+      "bounds": "159,1365,327,1560",
+      "className": "View"
+    },
+    {
+      "index": 169,
+      "text": "android.view.View",
+      "bounds": "204,1392,282,1470",
+      "className": "View"
+    },
+    {
+      "index": 170,
+      "text": "android.widget.Image",
+      "bounds": "204,1392,282,1470",
+      "className": "Image"
+    },
+    {
+      "index": 171,
+      "text": "炒菜盖饭",
+      "bounds": "165,1476,321,1527",
+      "className": "TextView"
+    },
+    {
+      "index": 172,
+      "text": "midas-id-19b1ffca95d129895a07",
+      "bounds": "327,1365,495,1560",
+      "className": "View"
+    },
+    {
+      "index": 173,
+      "text": "android.view.View",
+      "bounds": "372,1392,450,1470",
+      "className": "View"
+    },
+    {
+      "index": 174,
+      "text": "android.widget.Image",
+      "bounds": "372,1392,450,1470",
+      "className": "Image"
+    },
+    {
+      "index": 175,
+      "text": "米粉面条",
+      "bounds": "333,1476,489,1527",
+      "className": "TextView"
+    },
+    {
+      "index": 176,
+      "text": "midas-id-19b1ffca95e1d4349269",
+      "bounds": "495,1365,663,1560",
+      "className": "View"
+    },
+    {
+      "index": 177,
+      "text": "android.view.View",
+      "bounds": "540,1392,618,1470",
+      "className": "View"
+    },
+    {
+      "index": 178,
+      "text": "android.widget.Image",
+      "bounds": "540,1392,618,1470",
+      "className": "Image"
+    },
+    {
+      "index": 179,
+      "text": "汉堡披萨",
+      "bounds": "501,1476,657,1527",
+      "className": "TextView"
+    },
+    {
+      "index": 180,
+      "text": "midas-id-19b1ffca95e17c7baf60",
+      "bounds": "663,1365,831,1560",
+      "className": "View"
+    },
+    {
+      "index": 181,
+      "text": "android.view.View",
+      "bounds": "708,1392,786,1470",
+      "className": "View"
+    },
+    {
+      "index": 182,
+      "text": "android.widget.Image",
+      "bounds": "708,1392,786,1470",
+      "className": "Image"
+    },
+    {
+      "index": 183,
+      "text": "饮品甜点",
+      "bounds": "669,1476,825,1527",
+      "className": "TextView"
+    },
+    {
+      "index": 184,
+      "text": "midas-id-19b1ffca95e20a3b9f57",
+      "bounds": "831,1365,999,1560",
+      "className": "View"
+    },
+    {
+      "index": 185,
+      "text": "android.view.View",
+      "bounds": "876,1392,954,1470",
+      "className": "View"
+    },
+    {
+      "index": 186,
+      "text": "android.widget.Image",
+      "bounds": "876,1392,954,1470",
+      "className": "Image"
+    },
+    {
+      "index": 187,
+      "text": "面点粥饺",
+      "bounds": "837,1476,993,1527",
+      "className": "TextView"
+    },
+    {
+      "index": 188,
+      "text": "midas-id-19b1ffca95e12e6ec28",
+      "bounds": "999,1365,1200,1560",
+      "className": "View"
+    },
+    {
+      "index": 189,
+      "text": "android.view.View",
+      "bounds": "1059,1392,1140,1470",
+      "className": "View"
+    },
+    {
+      "index": 190,
+      "text": "android.widget.Image",
+      "bounds": "1059,1392,1140,1470",
+      "className": "Image"
+    },
+    {
+      "index": 191,
+      "text": "小吃麻辣烫",
+      "bounds": "1005,1476,1194,1527",
+      "className": "TextView"
+    },
+    {
+      "index": 192,
+      "text": "filter-label",
+      "bounds": "0,1560,1080,1668",
+      "className": "View"
+    },
+    {
+      "index": 193,
+      "text": "android.view.View",
+      "bounds": "0,1560,1080,1668",
+      "className": "View"
+    },
+    {
+      "index": 194,
+      "text": "filter-quick-list-id",
+      "bounds": "0,1560,1080,1647",
+      "className": "View"
+    },
+    {
+      "index": 195,
+      "text": "filter-quick-bar-9910043",
+      "bounds": "27,1560,237,1647",
+      "className": "View"
+    },
+    {
+      "index": 196,
+      "text": "8.9元畅吃",
+      "bounds": "60,1581,204,1626",
+      "className": "TextView"
+    },
+    {
+      "index": 197,
+      "text": "filter-quick-bar-10017",
+      "bounds": "255,1560,555,1647",
+      "className": "View"
+    },
+    {
+      "index": 198,
+      "text": "附近在买99+",
+      "bounds": "288,1581,522,1626",
+      "className": "TextView"
+    },
+    {
+      "index": 199,
+      "text": "filter-quick-bar-10067",
+      "bounds": "573,1560,813,1647",
+      "className": "View"
+    },
+    {
+      "index": 200,
+      "text": "midas-id-19b1ffca95f7d2518ab",
+      "bounds": "606,1587,780,1620",
+      "className": "View"
+    },
+    {
+      "index": 201,
+      "text": "android.widget.Image",
+      "bounds": "606,1587,780,1620",
+      "className": "Image"
+    },
+    {
+      "index": 202,
+      "text": "filter-quick-bar-8310045",
+      "bounds": "831,1560,1032,1647",
+      "className": "View"
+    },
+    {
+      "index": 203,
+      "text": "亮厨商家",
+      "bounds": "864,1581,999,1626",
+      "className": "TextView"
+    },
+    {
+      "index": 204,
+      "text": "filter-quick-bar-10066",
+      "bounds": "1050,1560,1251,1647",
+      "className": "View"
+    },
+    {
+      "index": 205,
+      "text": "android.view.View",
+      "bounds": "948,1560,1080,1647",
+      "className": "View"
+    },
+    {
+      "index": 206,
+      "text": "android.view.View",
+      "bounds": "972,1578,1023,1629",
+      "className": "View"
+    },
+    {
+      "index": 207,
+      "text": "midas-id-19b1ffca963c9410b66",
+      "bounds": "972,1578,1023,1638",
+      "className": "View"
+    },
+    {
+      "index": 208,
+      "text": "android.widget.Image",
+      "bounds": "996,1578,1047,1629",
+      "className": "Image"
+    },
+    {
+      "index": 209,
+      "text": "android.view.View",
+      "bounds": "0,1668,1080,2268",
+      "className": "View"
+    },
+    {
+      "index": 210,
+      "text": "android.view.View",
+      "bounds": "0,1668,1074,2268",
+      "className": "View"
+    },
+    {
+      "index": 211,
+      "text": "android.view.View",
+      "bounds": "0,1668,1074,2268",
+      "className": "View"
+    },
+    {
+      "index": 212,
+      "text": "android.widget.TextView",
+      "bounds": "33,1689,393,2049",
+      "className": "TextView"
+    },
+    {
+      "index": 213,
+      "text": "android.view.View",
+      "bounds": "414,1689,1041,2049",
+      "className": "View"
+    },
+    {
+      "index": 214,
+      "text": "android.widget.TextView",
+      "bounds": "414,1689,1041,1746",
+      "className": "TextView"
+    },
+    {
+      "index": 215,
+      "text": "android.widget.TextView",
+      "bounds": "414,1761,1041,1818",
+      "className": "TextView"
+    },
+    {
+      "index": 216,
+      "text": "android.widget.TextView",
+      "bounds": "414,1833,702,1875",
+      "className": "TextView"
+    },
+    {
+      "index": 217,
+      "text": "android.widget.TextView",
+      "bounds": "414,1986,702,2028",
+      "className": "TextView"
+    },
+    {
+      "index": 218,
+      "text": "android.widget.TextView",
+      "bounds": "33,2103,393,2268",
+      "className": "TextView"
+    },
+    {
+      "index": 219,
+      "text": "android.view.View",
+      "bounds": "414,2103,1041,2268",
+      "className": "View"
+    },
+    {
+      "index": 220,
+      "text": "android.widget.TextView",
+      "bounds": "414,2103,1041,2160",
+      "className": "TextView"
+    },
+    {
+      "index": 221,
+      "text": "android.widget.TextView",
+      "bounds": "414,2175,1041,2232",
+      "className": "TextView"
+    },
+    {
+      "index": 222,
+      "text": "android.widget.TextView",
+      "bounds": "414,2247,702,2268",
+      "className": "TextView"
+    },
+    {
+      "index": 223,
+      "text": "android.view.View",
+      "bounds": "0,1668,1080,2268",
+      "className": "View"
+    },
+    {
+      "index": 224,
+      "text": "android.view.View",
+      "bounds": "0,1668,1080,2268",
+      "className": "View"
+    },
+    {
+      "index": 225,
+      "text": "recommendList",
+      "bounds": "0,1668,1080,2268",
+      "className": "View"
+    },
+    {
+      "index": 226,
+      "text": "recommendList",
+      "bounds": "0,1668,1080,2268",
+      "className": "View"
+    },
+    {
+      "index": 227,
+      "text": "screen_0",
+      "bounds": "0,1668,1080,2268",
+      "className": "View"
+    },
+    {
+      "index": 228,
+      "text": "midas-id-19b1ffca91b128288bae",
+      "bounds": "0,1668,1080,2052",
+      "className": "View"
+    },
+    {
+      "index": 229,
+      "text": "custom-item-1",
+      "bounds": "0,1668,1080,2052",
+      "className": "View"
+    },
+    {
+      "index": 230,
+      "text": "index-product-wrap_0_1",
+      "bounds": "0,1668,1080,2052",
+      "className": "View"
+    },
+    {
+      "index": 231,
+      "text": "android.view.View",
+      "bounds": "0,1668,1080,2052",
+      "className": "View"
+    },
+    {
+      "index": 232,
+      "text": "itemComp_0_1",
+      "bounds": "0,1668,1080,2034",
+      "className": "View"
+    },
+    {
+      "index": 233,
+      "text": "midas-id-19b1ffca91a11fc09d54",
+      "bounds": "0,1668,1080,2031",
+      "className": "View"
+    },
+    {
+      "index": 234,
+      "text": "android.view.View",
+      "bounds": "0,1668,1080,2031",
+      "className": "View"
+    },
+    {
+      "index": 235,
+      "text": "android.view.View",
+      "bounds": "27,1695,342,2010",
+      "className": "View"
+    },
+    {
+      "index": 236,
+      "text": "android.view.View",
+      "bounds": "27,1695,342,2010",
+      "className": "View"
+    },
+    {
+      "index": 237,
+      "text": "mmp-phoenix-image-nopreview",
+      "bounds": "27,1695,342,2010",
+      "className": "View"
+    },
+    {
+      "index": 238,
+      "text": "android.widget.Image",
+      "bounds": "27,1695,342,2010",
+      "className": "Image"
+    },
+    {
+      "index": 239,
+      "text": "android.view.View",
+      "bounds": "363,1695,1053,1821",
+      "className": "View"
+    },
+    {
+      "index": 240,
+      "text": "android.widget.Image",
+      "bounds": "363,1701,495,1746",
+      "className": "Image"
+    },
+    {
+      "index": 241,
+      "text": "拼好饭专享【火锅鸡小酥肉双拼】+多种配菜+香米饭​",
+      "bounds": "363,1695,1053,1815",
+      "className": "TextView"
+    },
+    {
+      "index": 242,
+      "text": "android.view.View",
+      "bounds": "363,1827,489,1875",
+      "className": "View"
+    },
+    {
+      "index": 243,
+      "text": "4.7",
+      "bounds": "372,1827,414,1875",
+      "className": "TextView"
+    },
+    {
+      "index": 244,
+      "text": "赞",
+      "bounds": "414,1830,447,1872",
+      "className": "TextView"
+    },
+    {
+      "index": 245,
+      "text": "android.widget.Image",
+      "bounds": "447,1833,480,1866",
+      "className": "Image"
+    },
+    {
+      "index": 246,
+      "text": "8人称赞\"麻辣鲜香\"",
+      "bounds": "495,1827,762,1875",
+      "className": "TextView"
+    },
+    {
+      "index": 247,
+      "text": "一家很哇塞的火锅鸡·冒菜（北京卫星店美食城第1档口店）",
+      "bounds": "363,1884,855,1932",
+      "className": "TextView"
+    },
+    {
+      "index": 248,
+      "text": "26分钟",
+      "bounds": "867,1884,963,1932",
+      "className": "TextView"
+    },
+    {
+      "index": 249,
+      "text": "1.3km",
+      "bounds": "975,1884,1053,1932",
+      "className": "TextView"
+    },
+    {
+      "index": 250,
+      "text": "android.view.View",
+      "bounds": "363,1926,1053,2034",
+      "className": "View"
+    },
+    {
+      "index": 251,
+      "text": "¥",
+      "bounds": "363,1947,387,1986",
+      "className": "TextView"
+    },
+    {
+      "index": 252,
+      "text": "14",
+      "bounds": "384,1926,453,1992",
+      "className": "TextView"
+    },
+    {
+      "index": 253,
+      "text": ".94",
+      "bounds": "450,1947,504,1986",
+      "className": "TextView"
+    },
+    {
+      "index": 254,
+      "text": "到手价",
+      "bounds": "510,1944,603,1992",
+      "className": "TextView"
+    },
+    {
+      "index": 255,
+      "text": "已拼900+",
+      "bounds": "612,1944,747,1992",
+      "className": "TextView"
+    },
+    {
+      "index": 256,
+      "text": "android.widget.Image",
+      "bounds": "363,1989,1053,2034",
+      "className": "Image"
+    },
+    {
+      "index": 257,
+      "text": "midas-id-19b1ffca91cfe33d804",
+      "bounds": "0,2049,1080,2268",
+      "className": "View"
+    },
+    {
+      "index": 258,
+      "text": "custom-item-2",
+      "bounds": "0,2049,1080,2268",
+      "className": "View"
+    },
+    {
+      "index": 259,
+      "text": "index-product-wrap_0_2",
+      "bounds": "0,2049,1080,2268",
+      "className": "View"
+    },
+    {
+      "index": 260,
+      "text": "android.view.View",
+      "bounds": "0,2049,1080,2268",
+      "className": "View"
+    },
+    {
+      "index": 261,
+      "text": "itemComp_0_2",
+      "bounds": "0,2049,1080,2268",
+      "className": "View"
+    },
+    {
+      "index": 262,
+      "text": "midas-id-19b1ffca91b85027df3",
+      "bounds": "0,2049,1080,2268",
+      "className": "View"
+    },
+    {
+      "index": 263,
+      "text": "android.view.View",
+      "bounds": "0,2049,1080,2268",
+      "className": "View"
+    },
+    {
+      "index": 264,
+      "text": "android.view.View",
+      "bounds": "27,2076,342,2268",
+      "className": "View"
+    },
+    {
+      "index": 265,
+      "text": "android.view.View",
+      "bounds": "27,2076,342,2268",
+      "className": "View"
+    },
+    {
+      "index": 266,
+      "text": "mmp-phoenix-image-nopreview",
+      "bounds": "27,2076,342,2268",
+      "className": "View"
+    },
+    {
+      "index": 267,
+      "text": "android.widget.Image",
+      "bounds": "27,2076,342,2268",
+      "className": "Image"
+    },
+    {
+      "index": 268,
+      "text": "android.view.View",
+      "bounds": "363,2076,1053,2202",
+      "className": "View"
+    },
+    {
+      "index": 269,
+      "text": "android.widget.Image",
+      "bounds": "363,2085,495,2127",
+      "className": "Image"
+    },
+    {
+      "index": 270,
+      "text": "陈记麻辣香锅9荤9素香锅单人套餐+米饭​",
+      "bounds": "363,2076,1017,2196",
+      "className": "TextView"
+    },
+    {
+      "index": 271,
+      "text": "android.view.View",
+      "bounds": "363,2208,492,2256",
+      "className": "View"
+    },
+    {
+      "index": 272,
+      "text": "4.8",
+      "bounds": "372,2208,417,2256",
+      "className": "TextView"
+    },
+    {
+      "index": 273,
+      "text": "赞",
+      "bounds": "417,2211,450,2253",
+      "className": "TextView"
+    },
+    {
+      "index": 274,
+      "text": "android.widget.Image",
+      "bounds": "450,2217,483,2250",
+      "className": "Image"
+    },
+    {
+      "index": 275,
+      "text": "custom-tab-bar",
+      "bounds": "0,2118,1080,2268",
+      "className": "View"
+    },
+    {
+      "index": 276,
+      "text": "pages/index/index",
+      "bounds": "0,2121,360,2268",
+      "className": "View"
+    },
+    {
+      "index": 277,
+      "text": "android.view.View",
+      "bounds": "126,2136,234,2244",
+      "className": "View"
+    },
+    {
+      "index": 278,
+      "text": "android.widget.Image",
+      "bounds": "126,2136,234,2244",
+      "className": "Image"
+    },
+    {
+      "index": 279,
+      "text": "pages/orders/orders",
+      "bounds": "360,2121,720,2268",
+      "className": "View"
+    },
+    {
+      "index": 280,
+      "text": "android.view.View",
+      "bounds": "504,2142,576,2247",
+      "className": "View"
+    },
+    {
+      "index": 281,
+      "text": "android.widget.Image",
+      "bounds": "504,2142,576,2211",
+      "className": "Image"
+    },
+    {
+      "index": 282,
+      "text": "订单",
+      "bounds": "513,2211,567,2247",
+      "className": "TextView"
+    },
+    {
+      "index": 283,
+      "text": "新消息",
+      "bounds": "540,2121,645,2169",
+      "className": "TextView"
+    },
+    {
+      "index": 284,
+      "text": "骑手给你发消息了，记得查看",
+      "bounds": "330,2034,750,2118",
+      "className": "TextView"
+    },
+    {
+      "index": 285,
+      "text": "pages/mine/mine",
+      "bounds": "720,2121,1080,2268",
+      "className": "View"
+    },
+    {
+      "index": 286,
+      "text": "android.view.View",
+      "bounds": "864,2142,936,2247",
+      "className": "View"
+    },
+    {
+      "index": 287,
+      "text": "android.widget.Image",
+      "bounds": "864,2142,936,2211",
+      "className": "Image"
+    },
+    {
+      "index": 288,
+      "text": "我的",
+      "bounds": "873,2211,927,2247",
+      "className": "TextView"
+    },
+    {
+      "index": 289,
+      "text": "com.sankuai.meituan.takeoutnew:id/title",
+      "bounds": "117,134,162,215",
+      "className": "TextView"
+    }
+  ]
+}

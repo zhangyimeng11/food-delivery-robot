@@ -1,6 +1,9 @@
-# 自动化模块
-from .device import DeviceManager
-from .meituan import MeituanAutomation
+"""美团外卖自动化模块"""
 
-__all__ = ["DeviceManager", "MeituanAutomation"]
+from .meituan_tools import search_meals, place_order, confirm_payment
 
+__all__ = [
+    "search_meals",
+    "place_order", 
+    "confirm_payment",
+]

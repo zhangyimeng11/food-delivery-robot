@@ -1,6 +1,12 @@
 # 美团拼好饭 MCP 服务
 
-通过自动化操作手机上的美团外卖 App，实现语音点餐功能的 MCP 服务。
+基于 [DroidRun](https://github.com/droidrun/droidrun) Agent 的美团外卖自动化点餐服务。
+
+## 功能
+
+- **search_meals**: 搜索拼好饭套餐
+- **place_order**: 下单（到支付页面，不自动支付）
+- **confirm_payment**: 确认支付
 
 ## 快速开始
 
@@ -10,15 +16,26 @@
 pip install -r requirements.txt
 ```
 
-### 2. 连接手机
+### 2. 配置
 
-- 开启手机的 USB 调试
-- 用 USB 连接手机到电脑
-- 确认连接：`adb devices`
+设置 OpenAI API Key：
 
-### 3. 修改配置
+```bash
+export OPENAI_API_KEY="your-api-key"
+```
 
-编辑 `config.yaml` 配置文件。
+或在 `config.yaml` 中配置：
+
+```yaml
+llm:
+  api_key: "your-api-key"
+```
+
+### 3. 准备手机
+
+1. 安装 [DroidRun Portal](https://github.com/droidrun/droidrun-portal) APK
+2. 开启无障碍服务
+3. 通过 USB 或 WiFi 连接 ADB
 
 ### 4. 启动服务
 
@@ -26,51 +43,41 @@ pip install -r requirements.txt
 python -m src.main
 ```
 
-服务将在 `http://localhost:8765` 启动。
+服务启动后，MCP 端点：`http://localhost:8765/sse`
 
-## API 接口
+## 工具说明
 
-### 健康检查
+### search_meals
 
-```bash
-curl http://localhost:8765/health
+搜索美团拼好饭的餐品。
+
+```json
+{
+  "keyword": "奶茶",
+  "max_results": 3
+}
 ```
 
-### 搜索套餐
+### place_order
 
-```bash
-curl -X POST http://localhost:8765/tools/call \
-  -H "Content-Type: application/json" \
-  -d '{"name": "search_meals", "arguments": {"keyword": "奶茶"}}'
+下单指定餐品（到支付页面）。
+
+```json
+{
+  "meal_name": "珍珠奶茶"
+}
 ```
 
-### 下单
+### confirm_payment
 
-```bash
-curl -X POST http://localhost:8765/tools/call \
-  -H "Content-Type: application/json" \
-  -d '{"name": "place_order", "arguments": {"meal_index": 0}}'
+确认支付（点击极速支付）。
+
+```json
+{}
 ```
 
-### 查询订单
+## 技术栈
 
-```bash
-curl -X POST http://localhost:8765/tools/call \
-  -H "Content-Type: application/json" \
-  -d '{"name": "check_order_status", "arguments": {}}'
-```
-
-## 工具列表
-
-| 工具名 | 描述 |
-|--------|------|
-| search_meals | 搜索拼好饭套餐 |
-| place_order | 下单指定套餐 |
-| check_order_status | 查询最新订单状态 |
-
-## 注意事项
-
-- 手机需保持屏幕解锁
-- 美团外卖 App 需已登录
-- 下单操作不会自动支付，会停在确认页面
-
+- [FastMCP](https://github.com/jlowin/fastmcp) - MCP 服务框架
+- [DroidRun](https://github.com/droidrun/droidrun) - Android 自动化 Agent
+- [GPT-4o](https://openai.com) - LLM 驱动 UI 交互

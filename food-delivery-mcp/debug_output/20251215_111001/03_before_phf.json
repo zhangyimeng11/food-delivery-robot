@@ -1,0 +1,2048 @@
+{
+  "timestamp": "2025-12-15T11:10:09.936789",
+  "step": "03_before_phf",
+  "action": "准备点击拼好饭",
+  "elements_count": 340,
+  "elements": [
+    {
+      "index": 1,
+      "text": "android.widget.FrameLayout",
+      "bounds": "0,0,1080,2400",
+      "className": "FrameLayout"
+    },
+    {
+      "index": 2,
+      "text": "com.sankuai.meituan.takeoutnew:id/nested_scroll_recycler_view",
+      "bounds": "0,0,1080,2103",
+      "className": "RecyclerView"
+    },
+    {
+      "index": 3,
+      "text": "com.sankuai.meituan.takeoutnew:id/banner_placeholder",
+      "bounds": "0,0,1080,344",
+      "className": "View"
+    },
+    {
+      "index": 4,
+      "text": "android.widget.FrameLayout",
+      "bounds": "0,362,1080,845",
+      "className": "FrameLayout"
+    },
+    {
+      "index": 5,
+      "text": "com.sankuai.meituan.takeoutnew:id/vp_major_category",
+      "bounds": "0,362,1080,845",
+      "className": "ViewPager"
+    },
+    {
+      "index": 6,
+      "text": "pop_dialog_area_kingkong",
+      "bounds": "0,362,1080,845",
+      "className": "RecyclerView"
+    },
+    {
+      "index": 7,
+      "text": "美食",
+      "bounds": "30,362,234,605",
+      "className": "RelativeLayout"
+    },
+    {
+      "index": 8,
+      "text": "pop_dialog_kingkong_image_layout",
+      "bounds": "51,392,213,554",
+      "className": "FrameLayout"
+    },
+    {
+      "index": 9,
+      "text": "美食",
+      "bounds": "96,563,168,605",
+      "className": "TextView"
+    },
+    {
+      "index": 10,
+      "text": "甜点饮品",
+      "bounds": "234,362,438,605",
+      "className": "RelativeLayout"
+    },
+    {
+      "index": 11,
+      "text": "pop_dialog_kingkong_image_layout",
+      "bounds": "255,392,417,554",
+      "className": "FrameLayout"
+    },
+    {
+      "index": 12,
+      "text": "甜点饮品",
+      "bounds": "264,563,408,605",
+      "className": "TextView"
+    },
+    {
+      "index": 13,
+      "text": "超市便利",
+      "bounds": "438,362,642,605",
+      "className": "RelativeLayout"
+    },
+    {
+      "index": 14,
+      "text": "pop_dialog_kingkong_image_layout",
+      "bounds": "459,392,621,554",
+      "className": "FrameLayout"
+    },
+    {
+      "index": 15,
+      "text": "超市便利",
+      "bounds": "468,563,612,605",
+      "className": "TextView"
+    },
+    {
+      "index": 16,
+      "text": "蔬菜水果",
+      "bounds": "642,362,846,605",
+      "className": "RelativeLayout"
+    },
+    {
+      "index": 17,
+      "text": "pop_dialog_kingkong_image_layout",
+      "bounds": "663,392,825,554",
+      "className": "FrameLayout"
+    },
+    {
+      "index": 18,
+      "text": "蔬菜水果",
+      "bounds": "672,563,816,605",
+      "className": "TextView"
+    },
+    {
+      "index": 19,
+      "text": "看病买药",
+      "bounds": "846,362,1050,605",
+      "className": "RelativeLayout"
+    },
+    {
+      "index": 20,
+      "text": "pop_dialog_kingkong_image_layout",
+      "bounds": "867,392,1029,554",
+      "className": "FrameLayout"
+    },
+    {
+      "index": 21,
+      "text": "看病买药",
+      "bounds": "876,563,1020,605",
+      "className": "TextView"
+    },
+    {
+      "index": 22,
+      "text": "午餐",
+      "bounds": "30,605,234,797",
+      "className": "RelativeLayout"
+    },
+    {
+      "index": 23,
+      "text": "pop_dialog_kingkong_image_layout",
+      "bounds": "75,635,189,749",
+      "className": "FrameLayout"
+    },
+    {
+      "index": 24,
+      "text": "午餐",
+      "bounds": "96,755,168,797",
+      "className": "TextView"
+    },
+    {
+      "index": 25,
+      "text": "拼好饭",
+      "bounds": "234,605,438,797",
+      "className": "RelativeLayout"
+    },
+    {
+      "index": 26,
+      "text": "pop_dialog_kingkong_image_layout",
+      "bounds": "279,635,393,749",
+      "className": "FrameLayout"
+    },
+    {
+      "index": 27,
+      "text": "拼好饭",
+      "bounds": "282,755,390,797",
+      "className": "TextView"
+    },
+    {
+      "index": 28,
+      "text": "神抢手",
+      "bounds": "438,605,642,797",
+      "className": "RelativeLayout"
+    },
+    {
+      "index": 29,
+      "text": "pop_dialog_kingkong_image_layout",
+      "bounds": "483,635,597,749",
+      "className": "FrameLayout"
+    },
+    {
+      "index": 30,
+      "text": "神抢手",
+      "bounds": "486,755,594,797",
+      "className": "TextView"
+    },
+    {
+      "index": 31,
+      "text": "校园食堂",
+      "bounds": "642,605,846,797",
+      "className": "RelativeLayout"
+    },
+    {
+      "index": 32,
+      "text": "pop_dialog_kingkong_image_layout",
+      "bounds": "687,635,801,749",
+      "className": "FrameLayout"
+    },
+    {
+      "index": 33,
+      "text": "校园食堂",
+      "bounds": "672,755,816,797",
+      "className": "TextView"
+    },
+    {
+      "index": 34,
+      "text": "跑腿",
+      "bounds": "846,605,1050,797",
+      "className": "RelativeLayout"
+    },
+    {
+      "index": 35,
+      "text": "pop_dialog_kingkong_image_layout",
+      "bounds": "891,635,1005,749",
+      "className": "FrameLayout"
+    },
+    {
+      "index": 36,
+      "text": "跑腿",
+      "bounds": "912,755,984,797",
+      "className": "TextView"
+    },
+    {
+      "index": 37,
+      "text": "android.widget.RelativeLayout",
+      "bounds": "504,827,552,839",
+      "className": "RelativeLayout"
+    },
+    {
+      "index": 38,
+      "text": "android.widget.RelativeLayout",
+      "bounds": "552,827,576,839",
+      "className": "RelativeLayout"
+    },
+    {
+      "index": 39,
+      "text": "android.widget.FrameLayout",
+      "bounds": "0,845,1080,1205",
+      "className": "FrameLayout"
+    },
+    {
+      "index": 40,
+      "text": "android.view.ViewGroup",
+      "bounds": "24,875,1056,1205",
+      "className": "ViewGroup"
+    },
+    {
+      "index": 41,
+      "text": "大牌超低价",
+      "bounds": "354,908,534,957",
+      "className": "TextView"
+    },
+    {
+      "index": 42,
+      "text": "更多",
+      "bounds": "918,907,990,956",
+      "className": "TextView"
+    },
+    {
+      "index": 43,
+      "text": "android.view.ViewGroup",
+      "bounds": "103,998,540,1166",
+      "className": "ViewGroup"
+    },
+    {
+      "index": 44,
+      "text": "免配送费",
+      "bounds": "103,1001,230,1038",
+      "className": "TextView"
+    },
+    {
+      "index": 45,
+      "text": "袁记云饺",
+      "bounds": "286,998,540,1044",
+      "className": "TextView"
+    },
+    {
+      "index": 46,
+      "text": "袁记云饺鸡肉云",
+      "bounds": "286,1050,540,1096",
+      "className": "TextView"
+    },
+    {
+      "index": 47,
+      "text": "¥",
+      "bounds": "286,1128,309,1163",
+      "className": "TextView"
+    },
+    {
+      "index": 48,
+      "text": "10",
+      "bounds": "310,1120,364,1163",
+      "className": "TextView"
+    },
+    {
+      "index": 49,
+      "text": ".",
+      "bounds": "364,1125,374,1163",
+      "className": "TextView"
+    },
+    {
+      "index": 50,
+      "text": "9",
+      "bounds": "374,1125,397,1163",
+      "className": "TextView"
+    },
+    {
+      "index": 51,
+      "text": "android.view.ViewGroup",
+      "bounds": "540,998,977,1166",
+      "className": "ViewGroup"
+    },
+    {
+      "index": 52,
+      "text": "免配送费",
+      "bounds": "540,1001,667,1038",
+      "className": "TextView"
+    },
+    {
+      "index": 53,
+      "text": "沪上阿姨鲜果",
+      "bounds": "724,998,977,1044",
+      "className": "TextView"
+    },
+    {
+      "index": 54,
+      "text": "芒芒椰椰中杯",
+      "bounds": "724,1050,977,1096",
+      "className": "TextView"
+    },
+    {
+      "index": 55,
+      "text": "¥",
+      "bounds": "724,1128,746,1163",
+      "className": "TextView"
+    },
+    {
+      "index": 56,
+      "text": "8",
+      "bounds": "747,1120,777,1163",
+      "className": "TextView"
+    },
+    {
+      "index": 57,
+      "text": ".",
+      "bounds": "777,1125,787,1163",
+      "className": "TextView"
+    },
+    {
+      "index": 58,
+      "text": "5",
+      "bounds": "787,1125,810,1163",
+      "className": "TextView"
+    },
+    {
+      "index": 59,
+      "text": "android.view.ViewGroup",
+      "bounds": "54,989,540,1175",
+      "className": "ViewGroup"
+    },
+    {
+      "index": 60,
+      "text": "免配送费",
+      "bounds": "54,992,195,1033",
+      "className": "TextView"
+    },
+    {
+      "index": 61,
+      "text": "曼玲粥店",
+      "bounds": "258,989,540,1040",
+      "className": "TextView"
+    },
+    {
+      "index": 62,
+      "text": "曼玲粥店南瓜粥",
+      "bounds": "258,1046,540,1097",
+      "className": "TextView"
+    },
+    {
+      "index": 63,
+      "text": "¥",
+      "bounds": "258,1133,283,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 64,
+      "text": "8",
+      "bounds": "284,1124,317,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 65,
+      "text": ".",
+      "bounds": "317,1130,328,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 66,
+      "text": "9",
+      "bounds": "328,1130,354,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 67,
+      "text": "已补1.0元",
+      "bounds": "360,1130,506,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 68,
+      "text": "android.view.ViewGroup",
+      "bounds": "540,989,1026,1175",
+      "className": "ViewGroup"
+    },
+    {
+      "index": 69,
+      "text": "免配送费",
+      "bounds": "540,992,681,1033",
+      "className": "TextView"
+    },
+    {
+      "index": 70,
+      "text": "茶百道",
+      "bounds": "744,989,1026,1040",
+      "className": "TextView"
+    },
+    {
+      "index": 71,
+      "text": "青梅冰茶",
+      "bounds": "744,1046,1026,1097",
+      "className": "TextView"
+    },
+    {
+      "index": 72,
+      "text": "¥",
+      "bounds": "744,1133,769,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 73,
+      "text": "7",
+      "bounds": "770,1124,802,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 74,
+      "text": ".",
+      "bounds": "802,1130,813,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 75,
+      "text": "64",
+      "bounds": "813,1130,865,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 76,
+      "text": "android.view.ViewGroup",
+      "bounds": "54,989,540,1175",
+      "className": "ViewGroup"
+    },
+    {
+      "index": 77,
+      "text": "免配送费",
+      "bounds": "54,992,195,1033",
+      "className": "TextView"
+    },
+    {
+      "index": 78,
+      "text": "CoCo都可",
+      "bounds": "258,989,540,1040",
+      "className": "TextView"
+    },
+    {
+      "index": 79,
+      "text": "奶茶三兄弟中杯",
+      "bounds": "258,1046,540,1097",
+      "className": "TextView"
+    },
+    {
+      "index": 80,
+      "text": "¥",
+      "bounds": "258,1133,283,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 81,
+      "text": "8",
+      "bounds": "284,1124,317,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 82,
+      "text": ".",
+      "bounds": "317,1130,328,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 83,
+      "text": "74",
+      "bounds": "328,1130,379,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 84,
+      "text": "android.view.ViewGroup",
+      "bounds": "540,989,1026,1175",
+      "className": "ViewGroup"
+    },
+    {
+      "index": 85,
+      "text": "免配送费",
+      "bounds": "540,992,681,1033",
+      "className": "TextView"
+    },
+    {
+      "index": 86,
+      "text": "夸父炸串公司",
+      "bounds": "744,989,1026,1040",
+      "className": "TextView"
+    },
+    {
+      "index": 87,
+      "text": "香辣大鸡排+单",
+      "bounds": "744,1046,1026,1097",
+      "className": "TextView"
+    },
+    {
+      "index": 88,
+      "text": "¥",
+      "bounds": "744,1133,769,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 89,
+      "text": "8",
+      "bounds": "770,1124,803,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 90,
+      "text": ".",
+      "bounds": "803,1130,814,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 91,
+      "text": "9",
+      "bounds": "814,1130,840,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 92,
+      "text": "已补3.0元",
+      "bounds": "846,1130,992,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 93,
+      "text": "android.view.ViewGroup",
+      "bounds": "54,989,540,1175",
+      "className": "ViewGroup"
+    },
+    {
+      "index": 94,
+      "text": "免配送费",
+      "bounds": "54,992,195,1033",
+      "className": "TextView"
+    },
+    {
+      "index": 95,
+      "text": "朴正喜韩式炸",
+      "bounds": "258,989,540,1040",
+      "className": "TextView"
+    },
+    {
+      "index": 96,
+      "text": "朴正喜经典火鸡",
+      "bounds": "258,1046,540,1097",
+      "className": "TextView"
+    },
+    {
+      "index": 97,
+      "text": "¥",
+      "bounds": "258,1133,283,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 98,
+      "text": "12",
+      "bounds": "284,1124,344,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 99,
+      "text": ".",
+      "bounds": "344,1130,355,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 100,
+      "text": "5",
+      "bounds": "355,1130,381,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 101,
+      "text": "android.view.ViewGroup",
+      "bounds": "540,989,1026,1175",
+      "className": "ViewGroup"
+    },
+    {
+      "index": 102,
+      "text": "免配送费",
+      "bounds": "540,992,681,1033",
+      "className": "TextView"
+    },
+    {
+      "index": 103,
+      "text": "蜜雪冰城",
+      "bounds": "744,989,1026,1040",
+      "className": "TextView"
+    },
+    {
+      "index": 104,
+      "text": "珍珠奶茶(中杯",
+      "bounds": "744,1046,1026,1097",
+      "className": "TextView"
+    },
+    {
+      "index": 105,
+      "text": "¥",
+      "bounds": "744,1133,769,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 106,
+      "text": "6",
+      "bounds": "770,1124,803,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 107,
+      "text": ".",
+      "bounds": "803,1130,814,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 108,
+      "text": "6",
+      "bounds": "814,1130,840,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 109,
+      "text": "android.view.ViewGroup",
+      "bounds": "54,989,540,1175",
+      "className": "ViewGroup"
+    },
+    {
+      "index": 110,
+      "text": "免配送费",
+      "bounds": "54,992,195,1033",
+      "className": "TextView"
+    },
+    {
+      "index": 111,
+      "text": "正新鸡排",
+      "bounds": "258,989,540,1040",
+      "className": "TextView"
+    },
+    {
+      "index": 112,
+      "text": "爆料鸡排（避风",
+      "bounds": "258,1046,540,1097",
+      "className": "TextView"
+    },
+    {
+      "index": 113,
+      "text": "¥",
+      "bounds": "258,1133,283,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 114,
+      "text": "9",
+      "bounds": "284,1124,317,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 115,
+      "text": ".",
+      "bounds": "317,1130,328,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 116,
+      "text": "04",
+      "bounds": "328,1130,380,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 117,
+      "text": "android.view.ViewGroup",
+      "bounds": "540,989,1026,1175",
+      "className": "ViewGroup"
+    },
+    {
+      "index": 118,
+      "text": "免配送费",
+      "bounds": "540,992,681,1033",
+      "className": "TextView"
+    },
+    {
+      "index": 119,
+      "text": "巴比馒头",
+      "bounds": "744,989,1026,1040",
+      "className": "TextView"
+    },
+    {
+      "index": 120,
+      "text": "经典四件套（鲜",
+      "bounds": "744,1046,1026,1097",
+      "className": "TextView"
+    },
+    {
+      "index": 121,
+      "text": "¥",
+      "bounds": "744,1133,769,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 122,
+      "text": "8",
+      "bounds": "770,1124,803,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 123,
+      "text": ".",
+      "bounds": "803,1130,814,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 124,
+      "text": "9",
+      "bounds": "814,1130,840,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 125,
+      "text": "已补1.6元",
+      "bounds": "846,1130,992,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 126,
+      "text": "android.view.ViewGroup",
+      "bounds": "54,989,540,1175",
+      "className": "ViewGroup"
+    },
+    {
+      "index": 127,
+      "text": "免配送费",
+      "bounds": "54,992,195,1033",
+      "className": "TextView"
+    },
+    {
+      "index": 128,
+      "text": "绝味鸭脖",
+      "bounds": "258,989,540,1040",
+      "className": "TextView"
+    },
+    {
+      "index": 129,
+      "text": "绝味鸭脖素菜双",
+      "bounds": "258,1046,540,1097",
+      "className": "TextView"
+    },
+    {
+      "index": 130,
+      "text": "¥",
+      "bounds": "258,1133,283,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 131,
+      "text": "9",
+      "bounds": "284,1124,317,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 132,
+      "text": ".",
+      "bounds": "317,1130,328,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 133,
+      "text": "8",
+      "bounds": "328,1130,354,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 134,
+      "text": "android.view.ViewGroup",
+      "bounds": "540,989,1026,1175",
+      "className": "ViewGroup"
+    },
+    {
+      "index": 135,
+      "text": "免配送费",
+      "bounds": "540,992,681,1033",
+      "className": "TextView"
+    },
+    {
+      "index": 136,
+      "text": "蜜雪冰城",
+      "bounds": "744,989,1026,1040",
+      "className": "TextView"
+    },
+    {
+      "index": 137,
+      "text": "高山四季春茶",
+      "bounds": "744,1046,1026,1097",
+      "className": "TextView"
+    },
+    {
+      "index": 138,
+      "text": "¥",
+      "bounds": "744,1133,769,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 139,
+      "text": "4",
+      "bounds": "770,1124,803,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 140,
+      "text": ".",
+      "bounds": "803,1130,814,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 141,
+      "text": "9",
+      "bounds": "814,1130,840,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 142,
+      "text": "android.view.ViewGroup",
+      "bounds": "54,989,540,1175",
+      "className": "ViewGroup"
+    },
+    {
+      "index": 143,
+      "text": "免配送费",
+      "bounds": "54,992,195,1033",
+      "className": "TextView"
+    },
+    {
+      "index": 144,
+      "text": "牛约堡-手作",
+      "bounds": "258,989,540,1040",
+      "className": "TextView"
+    },
+    {
+      "index": 145,
+      "text": "牛约堡培根煎蛋",
+      "bounds": "258,1046,540,1097",
+      "className": "TextView"
+    },
+    {
+      "index": 146,
+      "text": "¥",
+      "bounds": "258,1133,283,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 147,
+      "text": "11",
+      "bounds": "284,1124,338,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 148,
+      "text": ".",
+      "bounds": "338,1130,349,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 149,
+      "text": "04",
+      "bounds": "349,1130,401,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 150,
+      "text": "android.view.ViewGroup",
+      "bounds": "540,989,1026,1175",
+      "className": "ViewGroup"
+    },
+    {
+      "index": 151,
+      "text": "免配送费",
+      "bounds": "540,992,681,1033",
+      "className": "TextView"
+    },
+    {
+      "index": 152,
+      "text": "蜜雪冰城",
+      "bounds": "744,989,1026,1040",
+      "className": "TextView"
+    },
+    {
+      "index": 153,
+      "text": "蜜桃四季春(新",
+      "bounds": "744,1046,1026,1097",
+      "className": "TextView"
+    },
+    {
+      "index": 154,
+      "text": "¥",
+      "bounds": "744,1133,769,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 155,
+      "text": "6",
+      "bounds": "770,1124,803,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 156,
+      "text": ".",
+      "bounds": "803,1130,814,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 157,
+      "text": "9",
+      "bounds": "814,1130,840,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 158,
+      "text": "android.view.ViewGroup",
+      "bounds": "54,989,540,1175",
+      "className": "ViewGroup"
+    },
+    {
+      "index": 159,
+      "text": "免配送费",
+      "bounds": "54,992,195,1033",
+      "className": "TextView"
+    },
+    {
+      "index": 160,
+      "text": "沪上阿姨鲜果",
+      "bounds": "258,989,540,1040",
+      "className": "TextView"
+    },
+    {
+      "index": 161,
+      "text": "千目抹茶波波中",
+      "bounds": "258,1046,540,1097",
+      "className": "TextView"
+    },
+    {
+      "index": 162,
+      "text": "¥",
+      "bounds": "258,1133,283,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 163,
+      "text": "8",
+      "bounds": "284,1124,317,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 164,
+      "text": ".",
+      "bounds": "317,1130,328,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 165,
+      "text": "74",
+      "bounds": "328,1130,379,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 166,
+      "text": "android.view.ViewGroup",
+      "bounds": "540,989,1026,1175",
+      "className": "ViewGroup"
+    },
+    {
+      "index": 167,
+      "text": "免配送费",
+      "bounds": "540,992,681,1033",
+      "className": "TextView"
+    },
+    {
+      "index": 168,
+      "text": "1点点",
+      "bounds": "744,989,1026,1040",
+      "className": "TextView"
+    },
+    {
+      "index": 169,
+      "text": "只此青柚（中杯",
+      "bounds": "744,1046,1026,1097",
+      "className": "TextView"
+    },
+    {
+      "index": 170,
+      "text": "¥",
+      "bounds": "744,1133,769,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 171,
+      "text": "8",
+      "bounds": "770,1124,803,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 172,
+      "text": ".",
+      "bounds": "803,1130,814,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 173,
+      "text": "8",
+      "bounds": "814,1130,840,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 174,
+      "text": "android.view.ViewGroup",
+      "bounds": "54,989,540,1175",
+      "className": "ViewGroup"
+    },
+    {
+      "index": 175,
+      "text": "免配送费",
+      "bounds": "54,992,195,1033",
+      "className": "TextView"
+    },
+    {
+      "index": 176,
+      "text": "南京大牌档",
+      "bounds": "258,989,540,1040",
+      "className": "TextView"
+    },
+    {
+      "index": 177,
+      "text": "南京大牌档民国",
+      "bounds": "258,1046,540,1097",
+      "className": "TextView"
+    },
+    {
+      "index": 178,
+      "text": "¥",
+      "bounds": "258,1133,283,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 179,
+      "text": "8",
+      "bounds": "284,1124,317,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 180,
+      "text": ".",
+      "bounds": "317,1130,328,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 181,
+      "text": "9",
+      "bounds": "328,1130,354,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 182,
+      "text": "已补3.4元",
+      "bounds": "360,1130,506,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 183,
+      "text": "android.view.ViewGroup",
+      "bounds": "540,989,1026,1175",
+      "className": "ViewGroup"
+    },
+    {
+      "index": 184,
+      "text": "免配送费",
+      "bounds": "540,992,681,1033",
+      "className": "TextView"
+    },
+    {
+      "index": 185,
+      "text": "袁记云饺",
+      "bounds": "744,989,1026,1040",
+      "className": "TextView"
+    },
+    {
+      "index": 186,
+      "text": "袁记云饺鸡肉云",
+      "bounds": "744,1046,1026,1097",
+      "className": "TextView"
+    },
+    {
+      "index": 187,
+      "text": "¥",
+      "bounds": "744,1133,769,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 188,
+      "text": "12",
+      "bounds": "770,1124,830,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 189,
+      "text": ".",
+      "bounds": "830,1130,841,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 190,
+      "text": "5",
+      "bounds": "841,1130,867,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 191,
+      "text": "android.view.ViewGroup",
+      "bounds": "54,989,540,1175",
+      "className": "ViewGroup"
+    },
+    {
+      "index": 192,
+      "text": "免配送费",
+      "bounds": "54,992,195,1033",
+      "className": "TextView"
+    },
+    {
+      "index": 193,
+      "text": "巴比馒头",
+      "bounds": "258,989,540,1040",
+      "className": "TextView"
+    },
+    {
+      "index": 194,
+      "text": "巴比馒头鲜汁肉",
+      "bounds": "258,1046,540,1097",
+      "className": "TextView"
+    },
+    {
+      "index": 195,
+      "text": "¥",
+      "bounds": "258,1133,283,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 196,
+      "text": "9",
+      "bounds": "284,1124,317,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 197,
+      "text": ".",
+      "bounds": "317,1130,328,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 198,
+      "text": "1",
+      "bounds": "328,1130,349,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 199,
+      "text": "android.view.ViewGroup",
+      "bounds": "540,989,1026,1175",
+      "className": "ViewGroup"
+    },
+    {
+      "index": 200,
+      "text": "免配送费",
+      "bounds": "540,992,681,1033",
+      "className": "TextView"
+    },
+    {
+      "index": 201,
+      "text": "夸父炸串公司",
+      "bounds": "744,989,1026,1040",
+      "className": "TextView"
+    },
+    {
+      "index": 202,
+      "text": "夸父炸串大年糕",
+      "bounds": "744,1046,1026,1097",
+      "className": "TextView"
+    },
+    {
+      "index": 203,
+      "text": "¥",
+      "bounds": "744,1133,769,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 204,
+      "text": "8",
+      "bounds": "770,1124,803,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 205,
+      "text": ".",
+      "bounds": "803,1130,814,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 206,
+      "text": "9",
+      "bounds": "814,1130,840,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 207,
+      "text": "已补4.0元",
+      "bounds": "846,1130,992,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 208,
+      "text": "android.view.ViewGroup",
+      "bounds": "54,989,540,1175",
+      "className": "ViewGroup"
+    },
+    {
+      "index": 209,
+      "text": "免配送费",
+      "bounds": "54,992,195,1033",
+      "className": "TextView"
+    },
+    {
+      "index": 210,
+      "text": "益禾堂",
+      "bounds": "258,989,540,1040",
+      "className": "TextView"
+    },
+    {
+      "index": 211,
+      "text": "珍珠红豆奶茶（",
+      "bounds": "258,1046,540,1097",
+      "className": "TextView"
+    },
+    {
+      "index": 212,
+      "text": "¥",
+      "bounds": "258,1133,283,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 213,
+      "text": "7",
+      "bounds": "284,1124,316,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 214,
+      "text": "android.view.ViewGroup",
+      "bounds": "540,989,1026,1175",
+      "className": "ViewGroup"
+    },
+    {
+      "index": 215,
+      "text": "免配送费",
+      "bounds": "540,992,681,1033",
+      "className": "TextView"
+    },
+    {
+      "index": 216,
+      "text": "蜜雪冰城",
+      "bounds": "744,989,1026,1040",
+      "className": "TextView"
+    },
+    {
+      "index": 217,
+      "text": "桃喜芒芒",
+      "bounds": "744,1046,1026,1097",
+      "className": "TextView"
+    },
+    {
+      "index": 218,
+      "text": "¥",
+      "bounds": "744,1133,769,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 219,
+      "text": "6",
+      "bounds": "770,1124,803,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 220,
+      "text": ".",
+      "bounds": "803,1130,814,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 221,
+      "text": "4",
+      "bounds": "814,1130,840,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 222,
+      "text": "android.view.ViewGroup",
+      "bounds": "54,989,540,1175",
+      "className": "ViewGroup"
+    },
+    {
+      "index": 223,
+      "text": "免配送费",
+      "bounds": "54,992,195,1033",
+      "className": "TextView"
+    },
+    {
+      "index": 224,
+      "text": "瑞幸咖啡",
+      "bounds": "258,989,540,1040",
+      "className": "TextView"
+    },
+    {
+      "index": 225,
+      "text": "鲜萃轻轻茉莉（",
+      "bounds": "258,1046,540,1097",
+      "className": "TextView"
+    },
+    {
+      "index": 226,
+      "text": "¥",
+      "bounds": "258,1133,283,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 227,
+      "text": "11",
+      "bounds": "284,1124,338,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 228,
+      "text": ".",
+      "bounds": "338,1130,349,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 229,
+      "text": "5",
+      "bounds": "349,1130,375,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 230,
+      "text": "android.view.ViewGroup",
+      "bounds": "540,989,1026,1175",
+      "className": "ViewGroup"
+    },
+    {
+      "index": 231,
+      "text": "免配送费",
+      "bounds": "540,992,681,1033",
+      "className": "TextView"
+    },
+    {
+      "index": 232,
+      "text": "蜜雪冰城",
+      "bounds": "744,989,1026,1040",
+      "className": "TextView"
+    },
+    {
+      "index": 233,
+      "text": "冰鲜柠檬水",
+      "bounds": "744,1046,1026,1097",
+      "className": "TextView"
+    },
+    {
+      "index": 234,
+      "text": "¥",
+      "bounds": "744,1133,769,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 235,
+      "text": "5",
+      "bounds": "770,1124,803,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 236,
+      "text": ".",
+      "bounds": "803,1130,814,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 237,
+      "text": "3",
+      "bounds": "814,1130,840,1172",
+      "className": "TextView"
+    },
+    {
+      "index": 238,
+      "text": "android.widget.FrameLayout",
+      "bounds": "0,1205,1080,1442",
+      "className": "FrameLayout"
+    },
+    {
+      "index": 239,
+      "text": "android.widget.FrameLayout",
+      "bounds": "24,1229,528,1436",
+      "className": "FrameLayout"
+    },
+    {
+      "index": 240,
+      "text": "¥",
+      "bounds": "68,1297,97,1345",
+      "className": "TextView"
+    },
+    {
+      "index": 241,
+      "text": "18",
+      "bounds": "99,1269,181,1350",
+      "className": "TextView"
+    },
+    {
+      "index": 242,
+      "text": "满45可用",
+      "bounds": "56,1355,193,1399",
+      "className": "TextView"
+    },
+    {
+      "index": 243,
+      "text": "外卖大额神券",
+      "bounds": "244,1250,499,1303",
+      "className": "TextView"
+    },
+    {
+      "index": 244,
+      "text": "15",
+      "bounds": "244,1306,284,1350",
+      "className": "TextView"
+    },
+    {
+      "index": 245,
+      "text": ":",
+      "bounds": "284,1306,292,1347",
+      "className": "TextView"
+    },
+    {
+      "index": 246,
+      "text": "47",
+      "bounds": "292,1306,332,1350",
+      "className": "TextView"
+    },
+    {
+      "index": 247,
+      "text": ":",
+      "bounds": "332,1306,340,1347",
+      "className": "TextView"
+    },
+    {
+      "index": 248,
+      "text": "58",
+      "bounds": "340,1306,380,1350",
+      "className": "TextView"
+    },
+    {
+      "index": 249,
+      "text": "后失效",
+      "bounds": "380,1306,479,1350",
+      "className": "TextView"
+    },
+    {
+      "index": 250,
+      "text": "android.widget.FrameLayout",
+      "bounds": "244,1355,391,1415",
+      "className": "FrameLayout"
+    },
+    {
+      "index": 251,
+      "text": "去使用",
+      "bounds": "268,1363,367,1407",
+      "className": "TextView"
+    },
+    {
+      "index": 252,
+      "text": "android.widget.FrameLayout",
+      "bounds": "552,1229,1056,1436",
+      "className": "FrameLayout"
+    },
+    {
+      "index": 253,
+      "text": "¥",
+      "bounds": "596,1297,625,1345",
+      "className": "TextView"
+    },
+    {
+      "index": 254,
+      "text": "15",
+      "bounds": "627,1269,710,1350",
+      "className": "TextView"
+    },
+    {
+      "index": 255,
+      "text": "满35可用",
+      "bounds": "584,1355,721,1399",
+      "className": "TextView"
+    },
+    {
+      "index": 256,
+      "text": "外卖大额神券",
+      "bounds": "772,1250,1027,1303",
+      "className": "TextView"
+    },
+    {
+      "index": 257,
+      "text": "15",
+      "bounds": "772,1306,812,1350",
+      "className": "TextView"
+    },
+    {
+      "index": 258,
+      "text": ":",
+      "bounds": "812,1306,820,1347",
+      "className": "TextView"
+    },
+    {
+      "index": 259,
+      "text": "47",
+      "bounds": "820,1306,860,1350",
+      "className": "TextView"
+    },
+    {
+      "index": 260,
+      "text": ":",
+      "bounds": "860,1306,868,1347",
+      "className": "TextView"
+    },
+    {
+      "index": 261,
+      "text": "58",
+      "bounds": "868,1306,908,1350",
+      "className": "TextView"
+    },
+    {
+      "index": 262,
+      "text": "后失效",
+      "bounds": "908,1306,1007,1350",
+      "className": "TextView"
+    },
+    {
+      "index": 263,
+      "text": "android.widget.FrameLayout",
+      "bounds": "772,1355,919,1415",
+      "className": "FrameLayout"
+    },
+    {
+      "index": 264,
+      "text": "去使用",
+      "bounds": "796,1363,895,1407",
+      "className": "TextView"
+    },
+    {
+      "index": 265,
+      "text": "android.widget.RelativeLayout",
+      "bounds": "0,1466,1080,2103",
+      "className": "RelativeLayout"
+    },
+    {
+      "index": 266,
+      "text": "com.sankuai.meituan.takeoutnew:id/home_view_Pager",
+      "bounds": "0,1466,1080,2103",
+      "className": "ViewPager"
+    },
+    {
+      "index": 267,
+      "text": "com.sankuai.meituan.takeoutnew:id/future_list",
+      "bounds": "0,1466,1080,2103",
+      "className": "RecyclerView"
+    },
+    {
+      "index": 268,
+      "text": "android.widget.FrameLayout",
+      "bounds": "30,1580,1050,1960",
+      "className": "FrameLayout"
+    },
+    {
+      "index": 269,
+      "text": "android.widget.FrameLayout",
+      "bounds": "30,1580,1050,1960",
+      "className": "FrameLayout"
+    },
+    {
+      "index": 270,
+      "text": "android.widget.FrameLayout",
+      "bounds": "30,1580,1050,1960",
+      "className": "FrameLayout"
+    },
+    {
+      "index": 271,
+      "text": "android.widget.FrameLayout",
+      "bounds": "60,1610,375,1925",
+      "className": "FrameLayout"
+    },
+    {
+      "index": 272,
+      "text": "android.widget.FrameLayout",
+      "bounds": "399,1610,1020,1924",
+      "className": "FrameLayout"
+    },
+    {
+      "index": 273,
+      "text": "西部马华清真牛肉面（学",
+      "bounds": "399,1610,961,1671",
+      "className": "TextView"
+    },
+    {
+      "index": 274,
+      "text": "更多选择按钮",
+      "bounds": "985,1610,1020,1674",
+      "className": "FrameLayout"
+    },
+    {
+      "index": 275,
+      "text": "4.8",
+      "bounds": "399,1682,457,1724",
+      "className": "TextView"
+    },
+    {
+      "index": 276,
+      "text": "分",
+      "bounds": "457,1682,490,1726",
+      "className": "TextView"
+    },
+    {
+      "index": 277,
+      "text": "月售9999+",
+      "bounds": "505,1682,666,1726",
+      "className": "TextView"
+    },
+    {
+      "index": 278,
+      "text": "人均 ¥26",
+      "bounds": "681,1682,810,1726",
+      "className": "TextView"
+    },
+    {
+      "index": 279,
+      "text": "起送 ¥20",
+      "bounds": "399,1736,528,1780",
+      "className": "TextView"
+    },
+    {
+      "index": 280,
+      "text": "免配送费",
+      "bounds": "543,1736,675,1780",
+      "className": "TextView"
+    },
+    {
+      "index": 281,
+      "text": "31分钟",
+      "bounds": "811,1736,915,1780",
+      "className": "TextView"
+    },
+    {
+      "index": 282,
+      "text": "1.6km",
+      "bounds": "927,1736,1020,1780",
+      "className": "TextView"
+    },
+    {
+      "index": 283,
+      "text": "android.widget.FrameLayout",
+      "bounds": "399,1807,989,1924",
+      "className": "FrameLayout"
+    },
+    {
+      "index": 284,
+      "text": "超倍补贴",
+      "bounds": "538,1819,670,1863",
+      "className": "TextView"
+    },
+    {
+      "index": 285,
+      "text": "¥",
+      "bounds": "417,1872,434,1913",
+      "className": "TextView"
+    },
+    {
+      "index": 286,
+      "text": "27.4",
+      "bounds": "436,1872,502,1913",
+      "className": "TextView"
+    },
+    {
+      "index": 287,
+      "text": "辣皮子拌面凉菜套餐兑换券·1张",
+      "bounds": "514,1872,971,1913",
+      "className": "TextView"
+    },
+    {
+      "index": 288,
+      "text": "com.sankuai.meituan.takeoutnew:id/layout_platinum_banner_rootview",
+      "bounds": "0,1984,1080,2103",
+      "className": "FrameLayout"
+    },
+    {
+      "index": 289,
+      "text": "android.widget.FrameLayout",
+      "bounds": "30,1984,1050,2103",
+      "className": "FrameLayout"
+    },
+    {
+      "index": 290,
+      "text": "android.widget.FrameLayout",
+      "bounds": "60,2014,381,2103",
+      "className": "FrameLayout"
+    },
+    {
+      "index": 291,
+      "text": "android.widget.FrameLayout",
+      "bounds": "60,2014,377,2103",
+      "className": "FrameLayout"
+    },
+    {
+      "index": 292,
+      "text": "android.widget.FrameLayout",
+      "bounds": "405,2014,1020,2074",
+      "className": "FrameLayout"
+    },
+    {
+      "index": 293,
+      "text": "德湘厨·湖南土菜馆(六道",
+      "bounds": "405,2014,960,2074",
+      "className": "TextView"
+    },
+    {
+      "index": 294,
+      "text": "android.widget.FrameLayout",
+      "bounds": "405,2080,1020,2103",
+      "className": "FrameLayout"
+    },
+    {
+      "index": 295,
+      "text": "android.widget.FrameLayout",
+      "bounds": "405,2083,716,2103",
+      "className": "FrameLayout"
+    },
+    {
+      "index": 296,
+      "text": "月售4000+",
+      "bounds": "405,2083,566,2103",
+      "className": "TextView"
+    },
+    {
+      "index": 297,
+      "text": "免配送费",
+      "bounds": "584,2083,716,2103",
+      "className": "TextView"
+    },
+    {
+      "index": 298,
+      "text": "30分钟",
+      "bounds": "916,2082,1020,2103",
+      "className": "TextView"
+    },
+    {
+      "index": 299,
+      "text": "\\\\\\\\\\\\\\\\u5173\\\\\\\\\\\\\\\\u95ED",
+      "bounds": "984,2023,1020,2059",
+      "className": ""
+    },
+    {
+      "index": 300,
+      "text": "android.widget.HorizontalScrollView",
+      "bounds": "0,1466,990,1556",
+      "className": "HorizontalScrollView"
+    },
+    {
+      "index": 301,
+      "text": "android.view.ViewGroup",
+      "bounds": "30,1466,276,1556",
+      "className": "ViewGroup"
+    },
+    {
+      "index": 302,
+      "text": "品质必点",
+      "bounds": "81,1486,225,1535",
+      "className": "TextView"
+    },
+    {
+      "index": 303,
+      "text": "android.view.ViewGroup",
+      "bounds": "300,1466,546,1556",
+      "className": "ViewGroup"
+    },
+    {
+      "index": 304,
+      "text": "堂食店",
+      "bounds": "369,1486,477,1535",
+      "className": "TextView"
+    },
+    {
+      "index": 305,
+      "text": "android.view.ViewGroup",
+      "bounds": "570,1466,816,1556",
+      "className": "ViewGroup"
+    },
+    {
+      "index": 306,
+      "text": "神券商家",
+      "bounds": "621,1486,765,1535",
+      "className": "TextView"
+    },
+    {
+      "index": 307,
+      "text": "android.view.ViewGroup",
+      "bounds": "840,1466,990,1556",
+      "className": "ViewGroup"
+    },
+    {
+      "index": 308,
+      "text": "点评高分",
+      "bounds": "891,1486,990,1535",
+      "className": "TextView"
+    },
+    {
+      "index": 309,
+      "text": "android.widget.ImageView",
+      "bounds": "990,1481,1050,1541",
+      "className": "ImageView"
+    },
+    {
+      "index": 310,
+      "text": "com.sankuai.meituan.takeoutnew:id/action_bar_background",
+      "bounds": "0,0,1080,344",
+      "className": "FrameLayout"
+    },
+    {
+      "index": 311,
+      "text": "首页",
+      "bounds": "36,123,162,208",
+      "className": "TextView"
+    },
+    {
+      "index": 312,
+      "text": "自取",
+      "bounds": "213,123,339,208",
+      "className": "TextView"
+    },
+    {
+      "index": 313,
+      "text": "com.sankuai.meituan.takeoutnew:id/address_container",
+      "bounds": "546,137,927,194",
+      "className": "LinearLayout"
+    },
+    {
+      "index": 314,
+      "text": "五道口购物中心，点击可选择地址",
+      "bounds": "597,137,927,194",
+      "className": "TextView"
+    },
+    {
+      "index": 315,
+      "text": "消息按钮,未读消息数：785",
+      "bounds": "975,132,1050,198",
+      "className": "RelativeLayout"
+    },
+    {
+      "index": 316,
+      "text": "99+",
+      "bounds": "992,132,1050,159",
+      "className": "TextView"
+    },
+    {
+      "index": 317,
+      "text": "com.sankuai.meituan.takeoutnew:id/layout_search_box_normal",
+      "bounds": "36,224,1044,323",
+      "className": "LinearLayout"
+    },
+    {
+      "index": 318,
+      "text": "搜索框",
+      "bounds": "72,255,110,291",
+      "className": "ImageView"
+    },
+    {
+      "index": 319,
+      "text": "今天就吃本地甄选折扣菜",
+      "bounds": "131,245,593,302",
+      "className": "TextView"
+    },
+    {
+      "index": 320,
+      "text": "搜索",
+      "bounds": "870,224,1044,323",
+      "className": "Button"
+    },
+    {
+      "index": 321,
+      "text": "com.sankuai.meituan.takeoutnew:id/layout_global_cart",
+      "bounds": "897,1713,1080,1863",
+      "className": "FrameLayout"
+    },
+    {
+      "index": 322,
+      "text": "购物车",
+      "bounds": "897,1713,1047,1863",
+      "className": "ImageView"
+    },
+    {
+      "index": 323,
+      "text": "com.sankuai.meituan.takeoutnew:id/quality_tag_container",
+      "bounds": "1033,1887,1075,2055",
+      "className": "RelativeLayout"
+    },
+    {
+      "index": 324,
+      "text": "资\n质\n规\n则",
+      "bounds": "1039,1893,1069,2049",
+      "className": "TextView"
+    },
+    {
+      "index": 325,
+      "text": "com.sankuai.meituan.takeoutnew:id/pagerindicator",
+      "bounds": "0,2049,1080,2268",
+      "className": "LinearLayout"
+    },
+    {
+      "index": 326,
+      "text": "首页",
+      "bounds": "0,2049,225,2268",
+      "className": "RelativeLayout"
+    },
+    {
+      "index": 327,
+      "text": "com.sankuai.meituan.takeoutnew:id/ll_normal",
+      "bounds": "0,2112,225,2234",
+      "className": "LinearLayout"
+    },
+    {
+      "index": 328,
+      "text": "首页",
+      "bounds": "75,2190,141,2234",
+      "className": "TextView"
+    },
+    {
+      "index": 329,
+      "text": "神券",
+      "bounds": "207,2049,441,2268",
+      "className": "RelativeLayout"
+    },
+    {
+      "index": 330,
+      "text": "com.sankuai.meituan.takeoutnew:id/ll_normal",
+      "bounds": "207,2112,441,2234",
+      "className": "LinearLayout"
+    },
+    {
+      "index": 331,
+      "text": "神券",
+      "bounds": "291,2190,357,2234",
+      "className": "TextView"
+    },
+    {
+      "index": 332,
+      "text": "大促",
+      "bounds": "423,2049,657,2268",
+      "className": "RelativeLayout"
+    },
+    {
+      "index": 333,
+      "text": "com.sankuai.meituan.takeoutnew:id/iv_mt_cardview",
+      "bounds": "457,2085,622,2250",
+      "className": "FrameLayout"
+    },
+    {
+      "index": 334,
+      "text": "订单",
+      "bounds": "639,2049,873,2268",
+      "className": "RelativeLayout"
+    },
+    {
+      "index": 335,
+      "text": "com.sankuai.meituan.takeoutnew:id/ll_normal",
+      "bounds": "639,2112,873,2234",
+      "className": "LinearLayout"
+    },
+    {
+      "index": 336,
+      "text": "订单",
+      "bounds": "723,2190,789,2234",
+      "className": "TextView"
+    },
+    {
+      "index": 337,
+      "text": "我的",
+      "bounds": "855,2049,1080,2268",
+      "className": "RelativeLayout"
+    },
+    {
+      "index": 338,
+      "text": "com.sankuai.meituan.takeoutnew:id/ll_normal",
+      "bounds": "855,2112,1080,2234",
+      "className": "LinearLayout"
+    },
+    {
+      "index": 339,
+      "text": "我的",
+      "bounds": "939,2190,1005,2234",
+      "className": "TextView"
+    },
+    {
+      "index": 340,
+      "text": "com.sankuai.meituan.takeoutnew:id/indicator_bg_container",
+      "bounds": "0,2103,1080,2268",
+      "className": "FrameLayout"
+    }
+  ]
+}
