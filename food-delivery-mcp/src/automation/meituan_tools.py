@@ -30,7 +30,7 @@ MEITUAN_PACKAGE = "com.sankuai.meituan.takeoutnew"
 LLM_CONFIG = {
     "api_key": "sk-8ca63b6b547c429ba348eeb131ae1bd0",
     "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-    "model": "qwen-max",
+    "model": "qwen-plus",
 }
 
 # 调试输出目录
@@ -197,22 +197,15 @@ async def search_meals(keyword: str) -> dict:
         _save_debug_step(session_id, "05_input_keyword", [], f"输入关键词 '{keyword}' index={input_index}")
     
     # 步骤 7: 点击搜索按钮
-    await asyncio.sleep(1)
+    # 【修改】直接使用 ADB 回车键 (KEYCODE_ENTER = 66) 进行搜索
+    # 这种方式比查找"搜索"按钮更稳定，避免误点到联想建议（如"瑞幸咖啡"）
+    print(f"[DEBUG]直接发送回车键 (Keyevent 66) 进行搜索")
+    _run_adb("shell input keyevent 66")
+    _save_debug_step(session_id, "06_click_enter_key", [], "发送回车键 (Keyevent 66)")
+    
+    # 等待搜索结果加载
+    await asyncio.sleep(4)
     desc, _, elements, phone_state = await tools.get_state()
-    _save_debug_step(session_id, "06_before_search_btn", elements, "准备点击搜索按钮")
-    
-    search_btn_index = None
-    for el in elements:
-        text = el.get('text', '')
-        if text == '搜索':
-            search_btn_index = el.get('index')
-            break
-    
-    if search_btn_index:
-        await tools.tap(search_btn_index)
-        _save_debug_step(session_id, "06_click_search_btn", [], f"点击搜索按钮 index={search_btn_index}")
-        await asyncio.sleep(2)
-        desc, _, elements, phone_state = await tools.get_state()
     
     # 保存搜索结果页面
     _save_debug_step(session_id, "07_search_result", elements, "搜索结果页面")
@@ -544,8 +537,27 @@ if __name__ == "__main__":
             print("=" * 50)
             print(json.dumps(result, ensure_ascii=False, indent=2))
     else:
+        print("未指定命令，执行默认测试流程：搜索咖啡并尝试下单第一个结果。")
+        async def default_test_flow():
+            # 1. 搜索咖啡
+            print(f"Executing search_meals for '咖啡'...")
+            search_result = await search_meals('咖啡')
+            print(f"Search result: {json.dumps(search_result, ensure_ascii=False, indent=2)}")
+
+            if search_result['success'] and search_result['meals']:
+                first_meal = search_result['meals'][0]['name']
+                print(f"Found meal: {first_meal}")
+
+                # 2. 下单（仅进入提交订单页面）
+                print(f"Executing place_order for '{first_meal}'...")
+                order_result = await place_order(first_meal)
+                print(f"Order result: {json.dumps(order_result, ensure_ascii=False, indent=2)}")
+            else:
+                print("Search failed or no meals found.")
+        
+        asyncio.run(default_test_flow())
+        print("\n" + "=" * 50)
         print("用法:")
         print("  python meituan_tools.py search [关键词]")
         print("  python meituan_tools.py order [套餐名]")
         print("  python meituan_tools.py pay")
-
