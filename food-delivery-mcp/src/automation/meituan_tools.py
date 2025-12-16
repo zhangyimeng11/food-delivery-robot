@@ -185,6 +185,30 @@ async def search_meals(keyword: str) -> dict:
     desc, _, elements, phone_state = await tools.get_state()
     _save_debug_step(session_id, "05_search_input_page", elements, "搜索输入页面")
     
+    # 从页面元素中提取搜索按钮的坐标
+    search_btn_x = None
+    search_btn_y = None
+    for el in elements:
+        text = el.get('text', '')
+        if text == '搜索':
+            bounds = el.get('bounds', '')
+            if bounds:
+                # bounds 格式: "x1,y1,x2,y2"
+                try:
+                    coords = [int(x) for x in bounds.split(',')]
+                    if len(coords) == 4:
+                        # 计算中间点坐标
+                        search_btn_x = (coords[0] + coords[2]) // 2
+                        search_btn_y = (coords[1] + coords[3]) // 2
+                        break
+                except ValueError:
+                    pass
+    
+    # 如果未找到，使用默认坐标（fallback）
+    if search_btn_x is None or search_btn_y is None:
+        search_btn_x = 960
+        search_btn_y = 173
+    
     input_index = None
     for el in elements:
         classname = el.get('className', '')
@@ -194,25 +218,16 @@ async def search_meals(keyword: str) -> dict:
     
     if input_index:
         await tools.input_text(keyword, input_index, clear=True)
-        _save_debug_step(session_id, "05_input_keyword", [], f"输入关键词 '{keyword}' index={input_index}")
+        _save_debug_step(session_id, "05_input_keyword", [], f"输入关键词 '{keyword}' index={input_index}", 
+                        {"search_btn_coords": f"({search_btn_x}, {search_btn_y})"})
     
     # 步骤 7: 点击搜索按钮
+    # 使用从步骤 6 提取的搜索按钮坐标点击（避免页面元素获取问题）
     await asyncio.sleep(1)
+    await tools.tap_by_coordinates(search_btn_x, search_btn_y)
+    _save_debug_step(session_id, "06_click_search_btn", [], f"点击搜索按钮 坐标=({search_btn_x}, {search_btn_y})")
+    await asyncio.sleep(2)
     desc, _, elements, phone_state = await tools.get_state()
-    _save_debug_step(session_id, "06_before_search_btn", elements, "准备点击搜索按钮")
-    
-    search_btn_index = None
-    for el in elements:
-        text = el.get('text', '')
-        if text == '搜索':
-            search_btn_index = el.get('index')
-            break
-    
-    if search_btn_index:
-        await tools.tap(search_btn_index)
-        _save_debug_step(session_id, "06_click_search_btn", [], f"点击搜索按钮 index={search_btn_index}")
-        await asyncio.sleep(2)
-        desc, _, elements, phone_state = await tools.get_state()
     
     # 保存搜索结果页面
     _save_debug_step(session_id, "07_search_result", elements, "搜索结果页面")
