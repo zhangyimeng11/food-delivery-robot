@@ -559,26 +559,6 @@ if __name__ == "__main__":
             print("=" * 50)
             print(json.dumps(result, ensure_ascii=False, indent=2))
     else:
-        print("未指定命令，执行默认测试流程：搜索咖啡并尝试下单第一个结果。")
-        async def default_test_flow():
-            # 1. 搜索咖啡
-            print(f"Executing search_meals for '咖啡'...")
-            search_result = await search_meals('咖啡')
-            print(f"Search result: {json.dumps(search_result, ensure_ascii=False, indent=2)}")
-
-            if search_result['success'] and search_result['meals']:
-                first_meal = search_result['meals'][0]['name']
-                print(f"Found meal: {first_meal}")
-
-                # 2. 下单（仅进入提交订单页面）
-                print(f"Executing place_order for '{first_meal}'...")
-                order_result = await place_order(first_meal)
-                print(f"Order result: {json.dumps(order_result, ensure_ascii=False, indent=2)}")
-            else:
-                print("Search failed or no meals found.")
-        
-        asyncio.run(default_test_flow())
-        print("\n" + "=" * 50)
         print("用法:")
         print("  python meituan_tools.py search [关键词]")
         print("  python meituan_tools.py order [套餐名]")
