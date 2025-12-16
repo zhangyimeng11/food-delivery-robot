@@ -24,7 +24,12 @@ for key in ['http_proxy', 'https_proxy', 'HTTP_PROXY', 'HTTPS_PROXY', 'all_proxy
     os.environ.pop(key, None)
 
 # 美团外卖包名
+# 美团外卖包名
 MEITUAN_PACKAGE = "com.sankuai.meituan.takeoutnew"
+
+# ADB 连接配置
+PHONE_IP = os.environ.get("PHONE_IP", "192.168.1.205")
+ADB_PORT = int(os.environ.get("ADB_PORT", "5555"))
 
 # LLM 配置
 LLM_CONFIG = {
@@ -35,6 +40,11 @@ LLM_CONFIG = {
 
 # 调试输出目录
 DEBUG_DIR = Path(__file__).parent.parent.parent / "debug_output"
+
+# 并发控制：全局锁和当前任务追踪
+# 防止多个工具调用同时操作手机 UI
+_meituan_lock = asyncio.Lock()
+_current_task: asyncio.Task | None = None
 
 
 def _save_debug_step(session_id: str, step: str, elements: list, action: str = "", extra: dict = None):
@@ -87,10 +97,59 @@ def _run_adb(cmd: str) -> str:
     return result.stdout + result.stderr
 
 
+async def _cancel_current_task():
+    """取消当前正在执行的任务"""
+    global _current_task
+    if _current_task and not _current_task.done():
+        _current_task.cancel()
+        try:
+            await _current_task
+        except asyncio.CancelledError:
+            pass
+        # 确保 App 被关闭，留给下一个任务干净的状态
+        _run_adb(f"shell am force-stop {MEITUAN_PACKAGE}")
+
+
+async def _ensure_adb_connection() -> bool:
+    """确保 ADB 连接，如果断开则尝试重连"""
+    target = f"{PHONE_IP}:{ADB_PORT}"
+    
+    try:
+        # 1. 检查当前是否已连接
+        result = subprocess.run(["adb", "devices"], capture_output=True, text=True)
+        if target in result.stdout and "device" in result.stdout:
+            return True
+            
+        print(f"[ADB] 连接断开或未连接，尝试连接 {target}...")
+        
+        # 2. 尝试重连
+        # 先断开可能的僵尸连接
+        subprocess.run(["adb", "disconnect", target], capture_output=True)
+        # 连接
+        connect_res = subprocess.run(["adb", "connect", target], capture_output=True, text=True)
+        
+        # 3. 验证连接结果
+        if f"connected to {target}" in connect_res.stdout or "already connected" in connect_res.stdout:
+            # 再次确认 devices 列表
+            verify_res = subprocess.run(["adb", "devices"], capture_output=True, text=True)
+            if target in verify_res.stdout and "device" in verify_res.stdout:
+                print(f"[ADB] 重连成功: {target}")
+                return True
+        
+        print(f"[ADB] 重连失败: {connect_res.stdout.strip()}")
+        return False
+        
+    except Exception as e:
+        print(f"[ADB] 连接检查出错: {e}")
+        return False
+
+
 async def search_meals(keyword: str) -> dict:
     """搜索套餐
     
     流程：关闭美团 → 打开美团 → 等待广告 → 点击拼好饭 → 点击搜索框 → 输入关键词 → 点击搜索 → LLM分析结果
+    
+    注意：如果有其他工具调用正在进行，会自动取消之前的任务
     
     Args:
         keyword: 搜索关键词，如"牛肉面"、"包子"
@@ -108,6 +167,35 @@ async def search_meals(keyword: str) -> dict:
             ]
         }
     """
+    global _current_task
+    
+    # 取消正在进行的任务
+    await _cancel_current_task()
+    
+    async with _meituan_lock:
+        _current_task = asyncio.current_task()
+        
+        try:
+            return await _search_meals_impl(keyword)
+        except asyncio.CancelledError:
+            # 被取消时返回取消信息
+            return {
+                "success": False,
+                "keyword": keyword,
+                "error": "操作被新的请求取消"
+            }
+
+
+async def _search_meals_impl(keyword: str) -> dict:
+    """搜索套餐的实际实现"""
+    # 确保 ADB 连接
+    if not await _ensure_adb_connection():
+        return {
+            "success": False, 
+            "keyword": keyword, 
+            "error": f"无法连接到手机 ({PHONE_IP}:{ADB_PORT})，请检查网络或手机状态"
+        }
+
     tools = AdbTools()
     await tools.connect()
     
@@ -326,6 +414,8 @@ async def place_order(meal_name: str) -> dict:
     前提：已经在搜索结果页面
     流程：找到套餐 → 点击进入详情 → 点击"马上抢" → 再次点击"马上抢" → 进入支付页面 → 提取最终价格
     
+    注意：如果有其他工具调用正在进行，会自动取消之前的任务
+    
     Args:
         meal_name: 套餐名称或关键词，如"韭菜包子"
         
@@ -336,6 +426,34 @@ async def place_order(meal_name: str) -> dict:
             "final_price": str  # 如 "¥16.7"
         }
     """
+    global _current_task
+    
+    # 取消正在进行的任务
+    await _cancel_current_task()
+    
+    async with _meituan_lock:
+        _current_task = asyncio.current_task()
+        
+        try:
+            return await _place_order_impl(meal_name)
+        except asyncio.CancelledError:
+            return {
+                "success": False,
+                "meal_name": meal_name,
+                "error": "操作被新的请求取消"
+            }
+
+
+async def _place_order_impl(meal_name: str) -> dict:
+    """下单的实际实现"""
+    # 确保 ADB 连接
+    if not await _ensure_adb_connection():
+        return {
+            "success": False, 
+            "meal_name": meal_name, 
+            "error": f"无法连接到手机 ({PHONE_IP}:{ADB_PORT})"
+        }
+
     tools = AdbTools()
     await tools.connect()
     
@@ -435,12 +553,40 @@ async def confirm_payment() -> dict:
     前提：已经在支付页面
     流程：找到包含"支付"的按钮 → 点击支付 → 完成
     
+    注意：如果有其他工具调用正在进行，会自动取消之前的任务
+    
     Returns:
         dict: {
             "success": bool,
             "message": str
         }
     """
+    global _current_task
+    
+    # 取消正在进行的任务
+    await _cancel_current_task()
+    
+    async with _meituan_lock:
+        _current_task = asyncio.current_task()
+        
+        try:
+            return await _confirm_payment_impl()
+        except asyncio.CancelledError:
+            return {
+                "success": False,
+                "error": "操作被新的请求取消"
+            }
+
+
+async def _confirm_payment_impl() -> dict:
+    """确认支付的实际实现"""
+    # 确保 ADB 连接
+    if not await _ensure_adb_connection():
+        return {
+            "success": False, 
+            "error": f"无法连接到手机 ({PHONE_IP}:{ADB_PORT})"
+        }
+
     tools = AdbTools()
     await tools.connect()
     

@@ -1,0 +1,6 @@
+id=adb_wifi_autostart
+name=ADB WiFi Auto Start
+version=1.0
+versionCode=1
+author=MCP
+description=开机自动启用 ADB WiFi 在端口 5555，无需手动开启
