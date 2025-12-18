@@ -21,6 +21,10 @@ logger = logging.getLogger(__name__)
 # 美团外卖包名
 MEITUAN_PACKAGE = "com.sankuai.meituan.takeoutnew"
 
+# ADB 连接配置
+PHONE_IP = os.environ.get("PHONE_IP", "192.168.1.200")
+ADB_PORT = int(os.environ.get("ADB_PORT", "5555"))
+
 
 @dataclass
 class MealInfo:
@@ -47,40 +51,65 @@ def _run_adb(cmd: str, timeout: float = 10.0) -> str:
         return ""
 
 
+async def _ensure_adb_connection() -> bool:
+    """确保 ADB 连接，如果断开则尝试重连"""
+    target = f"{PHONE_IP}:{ADB_PORT}"
+    
+    try:
+        # 1. 检查当前是否已连接
+        result = subprocess.run(["adb", "devices"], capture_output=True, text=True)
+        if target in result.stdout and "device" in result.stdout:
+            return True
+            
+        logger.info(f"[ADB] 连接断开或未连接，尝试连接 {target}...")
+        
+        # 2. 尝试重连
+        # 先断开可能的僵尸连接
+        subprocess.run(["adb", "disconnect", target], capture_output=True)
+        # 连接
+        connect_res = subprocess.run(["adb", "connect", target], capture_output=True, text=True)
+        
+        # 3. 验证连接结果
+        if f"connected to {target}" in connect_res.stdout or "already connected" in connect_res.stdout:
+            # 再次确认 devices 列表
+            verify_res = subprocess.run(["adb", "devices"], capture_output=True, text=True)
+            if target in verify_res.stdout and "device" in verify_res.stdout:
+                logger.info(f"[ADB] 重连成功: {target}")
+                return True
+        
+        logger.warning(f"[ADB] 重连失败: {connect_res.stdout.strip()}")
+        return False
+        
+    except Exception as e:
+        logger.error(f"[ADB] 连接检查出错: {e}")
+        return False
+
+
 class MeituanAgent:
-    """美团外卖 Agent - 使用 DroidRun v0.4.16 处理 UI 交互"""
+    """美团外卖 Agent - 使用 DroidRun v0.4.16 处理 UI 交互
+    
+    通过 OpenRouter 调用 Claude Haiku 4.5 模型
+    """
     
     def __init__(
         self, 
         api_key: str | None = None, 
-        model: str = "gpt-5",
-        provider: str = "openai"  # "openai" or "gemini"
+        model: str = "anthropic/claude-haiku-4.5",
     ):
         """初始化
         
         Args:
-            api_key: API Key，如果不提供则从环境变量读取
-            model: 模型名称
-                - OpenAI: gpt-4o, gpt-5 等
-                - Gemini: gemini-2.5-pro, gemini-2.0-flash 等
-            provider: LLM 提供商，"openai" 或 "gemini"
+            api_key: OpenRouter API Key，如果不提供则从环境变量 OPENROUTER_API_KEY 读取
+            model: OpenRouter 模型名称，如 anthropic/claude-haiku-4.5, anthropic/claude-sonnet-4.5 等
         """
-        self._provider = provider.lower()
         self._model = model
         self._tools = None
         self._last_search_results: list[MealInfo] = []
         
-        # 根据 provider 获取 API Key
-        if self._provider == "openai":
-            self._api_key = api_key or os.environ.get("OPENAI_API_KEY", "")
-            if not self._api_key:
-                raise ValueError("必须提供 OPENAI_API_KEY")
-        elif self._provider == "gemini":
-            self._api_key = api_key or os.environ.get("GOOGLE_API_KEY", "")
-            if not self._api_key:
-                raise ValueError("必须提供 GOOGLE_API_KEY")
-        else:
-            raise ValueError(f"不支持的 provider: {self._provider}")
+        # 获取 OpenRouter API Key
+        self._api_key = api_key or os.environ.get("OPENROUTER_API_KEY", "")
+        if not self._api_key:
+            raise ValueError("必须提供 OPENROUTER_API_KEY")
     
     async def _ensure_tools(self):
         """确保 AdbTools 已初始化"""
@@ -154,23 +183,15 @@ class MeituanAgent:
         )
     
     def _create_llm(self):
-        """创建 LLM 实例"""
-        if self._provider == "openai":
-            from llama_index.llms.openai import OpenAI
-            return OpenAI(
-                model=self._model,
-                api_key=self._api_key,
-                temperature=0.1,
-            )
-        elif self._provider == "gemini":
-            from llama_index.llms.gemini import Gemini
-            return Gemini(
-                model=f"models/{self._model}",
-                api_key=self._api_key,
-                temperature=0.1,
-            )
-        else:
-            raise ValueError(f"不支持的 provider: {self._provider}")
+        """创建 OpenRouter LLM 实例"""
+        from llama_index.llms.openai_like import OpenAILike
+        return OpenAILike(
+            model=self._model,
+            api_key=self._api_key,
+            api_base="https://openrouter.ai/api/v1",
+            temperature=0.1,
+            is_chat_model=True,
+        )
     
     async def _run_agent(self, goal: str, max_steps: int = 15, timeout: int = 300) -> dict:
         """运行 DroidRun Agent 执行任务
@@ -222,9 +243,15 @@ class MeituanAgent:
                 "error": str(e),
             }
     
-    def _restart_meituan(self):
+    async def _restart_meituan(self):
         """重启美团外卖 App，等待广告结束"""
         import time
+        
+        # 先确保 ADB 已连接
+        if not await _ensure_adb_connection():
+            logger.error("ADB 连接失败，无法重启美团外卖")
+            return False
+        
         logger.info("关闭美团外卖...")
         _run_adb(f"shell am force-stop {MEITUAN_PACKAGE}")
         time.sleep(1)
@@ -235,6 +262,7 @@ class MeituanAgent:
         logger.info("等待 5 秒（广告时间）...")
         time.sleep(5)
         logger.info("美团外卖已就绪")
+        return True
     
     async def search_meals(self, keyword: str, max_results: int = 3) -> dict:
         """搜索套餐
@@ -247,7 +275,12 @@ class MeituanAgent:
             搜索结果
         """
         # 重启美团确保干净状态
-        self._restart_meituan()
+        if not await self._restart_meituan():
+            return {
+                "success": False,
+                "keyword": keyword,
+                "error": f"无法连接到手机 ({PHONE_IP}:{ADB_PORT})，请检查网络或手机状态",
+            }
         
         # 使用 Agent 执行搜索
         goal = f"""你现在在美团外卖首页。请完成以下任务：
@@ -394,8 +427,11 @@ async def _test():
     # 设置日志
     logging.basicConfig(level=logging.INFO)
     
-    # 使用 GPT-5 模型（推荐，效果最好）
-    agent = MeituanAgent(model="gpt-5", provider="openai")
+    # 使用 OpenRouter + Claude Haiku 4.5
+    agent = MeituanAgent(
+        api_key="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",
+        model="anthropic/claude-haiku-4.5",
+    )
     
     # 步骤1：搜索炒面
     print("=== 步骤1：搜索炒面 ===")

@@ -28,7 +28,7 @@ for key in ['http_proxy', 'https_proxy', 'HTTP_PROXY', 'HTTPS_PROXY', 'all_proxy
 MEITUAN_PACKAGE = "com.sankuai.meituan.takeoutnew"
 
 # ADB 连接配置
-PHONE_IP = os.environ.get("PHONE_IP", "192.168.1.205")
+PHONE_IP = os.environ.get("PHONE_IP", "192.168.1.200")
 ADB_PORT = int(os.environ.get("ADB_PORT", "5555"))
 
 # LLM 配置
