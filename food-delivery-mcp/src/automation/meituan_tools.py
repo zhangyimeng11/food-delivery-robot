@@ -28,7 +28,7 @@ for key in ['http_proxy', 'https_proxy', 'HTTP_PROXY', 'HTTPS_PROXY', 'all_proxy
 MEITUAN_PACKAGE = "com.sankuai.meituan.takeoutnew"
 
 # ADB 连接配置
-PHONE_IP = os.environ.get("PHONE_IP", "192.168.1.200")
+PHONE_IP = os.environ.get("PHONE_IP", "192.168.1.196")
 ADB_PORT = int(os.environ.get("ADB_PORT", "5555"))
 
 # LLM 配置
@@ -212,20 +212,50 @@ async def _search_meals_impl(keyword: str) -> dict:
     # 步骤 3: 等待 5 秒（广告）
     await asyncio.sleep(5)
     
-    # 步骤 3.5: 检测并关闭红包弹窗
+    # 步骤 3.5: 检测并关闭弹窗 (红包或更新弹窗)
     desc, _, elements, phone_state = await tools.get_state()
     _save_debug_step(session_id, "01_after_open", elements, "打开美团后", {"keyword": keyword})
     
     popup_closed = False
     for el in elements:
         text = el.get('text', '')
+        resource_id = el.get('resourceId', '')
+        
+        # 情况1: 红包弹窗
         if '收下' in text:
             # 找到红包弹窗，点击"开心收下"或类似按钮
             await tools.tap(el.get('index'))
             popup_closed = True
+            print(f"[DEBUG] 检测到红包弹窗，已点击关闭")
             await asyncio.sleep(1)
             break
+            
+        # 情况2: 版本更新弹窗 (根据用户提供的 page_elements.json)
+        # 查找关闭按钮: com.sankuai.meituan.takeoutnew:id/btn_close
+        if 'btn_close' in resource_id:
+            await tools.tap(el.get('index'))
+            popup_closed = True
+            print(f"[DEBUG] 检测到更新弹窗，已点击关闭按钮 (id={resource_id})")
+            await asyncio.sleep(1)
+            break
+            
+        # 情况2备选: 如果找不到ID，通过"立即安装"判断是否存在弹窗，然后找关闭按钮
     
+    # 如果没通过 ID 找到关闭按钮，但看到了"立即安装"，尝试找一下关闭按钮（防止 id 变动）
+    if not popup_closed:
+        has_update_popup = False
+        for el in elements:
+            if '立即安装' in el.get('text', ''):
+                has_update_popup = True
+                break
+        
+        if has_update_popup:
+            # 尝试通过位置或层级找关闭按钮 (通常在右上角)
+            # 这里简单起见，如果刚才没找到 btn_close，可能需要更复杂的逻辑，
+            # 但根据 page_elements.json，btn_close 是存在的。
+            # 为了稳健，我们可以遍历找一下 className 为 Button 且 bounds 在右上角的
+            pass
+
     if popup_closed:
         desc, _, elements, phone_state = await tools.get_state()
         _save_debug_step(session_id, "02_after_popup", elements, "关闭弹窗后")

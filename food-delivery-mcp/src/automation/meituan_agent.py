@@ -22,7 +22,7 @@ logger = logging.getLogger(__name__)
 MEITUAN_PACKAGE = "com.sankuai.meituan.takeoutnew"
 
 # ADB 连接配置
-PHONE_IP = os.environ.get("PHONE_IP", "192.168.1.200")
+PHONE_IP = os.environ.get("PHONE_IP", "192.168.1.196")
 ADB_PORT = int(os.environ.get("ADB_PORT", "5555"))
 
 
