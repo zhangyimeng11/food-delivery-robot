@@ -11,3 +11,6 @@ llama-index-llms-openai
 # Config
 pyyaml
 pydantic>=2.0.0
+
+# Reverse Connection
+websockets>=12.0
