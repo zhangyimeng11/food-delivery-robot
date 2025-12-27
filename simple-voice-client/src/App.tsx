@@ -14,8 +14,10 @@ import '@livekit/components-styles'
 
 // ========== 配置 ==========
 const CONFIG = {
-  DEPLOYMENT_SLUG: '外卖助手-1765760043207',
+  DEPLOYMENT_SLUG: '外卖助手-1765480093368',
   API_BASE_URL: '/api/v1',
+  // 机器人 TTS 服务地址
+  ROBOT_TTS_URL: 'http://192.168.0.13:8080',
 }
 
 // ========== 类型定义 ==========
@@ -114,6 +116,120 @@ function TranscriptionTile() {
   )
 }
 
+// 监听 Agent 的回复，发送到机器人扬声器播放
+function RobotTTSBridge() {
+  const transcriptions = useTranscriptions()
+  const { localParticipant } = useLocalParticipant()
+  const sentTextsRef = useRef<Set<string>>(new Set())
+  const pendingTextRef = useRef<string>('')
+  const debounceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  useEffect(() => {
+    // 调试：打印所有 transcriptions
+    console.log('[RobotTTS] Transcriptions updated:', transcriptions.length)
+
+    // 找到所有 Agent 回复（非本地用户的）
+    const agentTranscriptions = transcriptions.filter(
+      (t) => t.participantInfo.identity !== localParticipant.identity
+    )
+
+    console.log('[RobotTTS] Agent transcriptions:', agentTranscriptions.length)
+
+    if (agentTranscriptions.length === 0) return
+
+    // 取最新的一条 Agent 回复
+    const latest = agentTranscriptions[agentTranscriptions.length - 1]
+    const text = latest.text?.trim()
+
+    console.log('[RobotTTS] Latest agent text:', text?.substring(0, 100))
+
+    if (!text || text.length < 2) return
+
+    // 如果文本已经发送过，跳过
+    if (sentTextsRef.current.has(text)) {
+      return
+    }
+
+    // 使用防抖：等待 1 秒文本稳定后再发送
+    pendingTextRef.current = text
+
+    if (debounceTimerRef.current) {
+      clearTimeout(debounceTimerRef.current)
+    }
+
+    debounceTimerRef.current = setTimeout(() => {
+      const currentText = pendingTextRef.current
+      if (currentText && !sentTextsRef.current.has(currentText)) {
+        console.log('[RobotTTS] Sending to robot after debounce:', currentText.substring(0, 50))
+        sentTextsRef.current.add(currentText)
+
+        // 发送到机器人 TTS 服务
+        fetch(`${CONFIG.ROBOT_TTS_URL}/speak`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text: currentText }),
+          mode: 'cors',
+        })
+          .then((res) => {
+            console.log('[RobotTTS] Response:', res.status)
+          })
+          .catch((error) => {
+            console.error('[RobotTTS] Failed:', error)
+          })
+      }
+    }, 1000) // 等待 1 秒文本稳定
+
+    return () => {
+      if (debounceTimerRef.current) {
+        clearTimeout(debounceTimerRef.current)
+      }
+    }
+  }, [transcriptions, localParticipant.identity])
+
+  // 这个组件不渲染任何内容
+  return null
+}
+
+// ========== 禁用浏览器音频输出组件 ==========
+// 静音所有远程参与者的音频轨道，避免浏览器播放
+function DisableAudioOutput() {
+  const room = useRoomContext()
+
+  useEffect(() => {
+    if (!room) return
+
+    // 禁用所有远程音频轨道的播放
+    const disableAudio = () => {
+      room.remoteParticipants.forEach((participant) => {
+        participant.audioTrackPublications.forEach((publication) => {
+          if (publication.track) {
+            // 将音频轨道静音
+            const audioElement = publication.track.attachedElements[0] as HTMLAudioElement
+            if (audioElement) {
+              audioElement.muted = true
+              audioElement.volume = 0
+            }
+          }
+        })
+      })
+    }
+
+    // 监听轨道订阅事件
+    room.on('trackSubscribed', disableAudio)
+    room.on('participantConnected', disableAudio)
+
+    // 初始禁用
+    disableAudio()
+
+    return () => {
+      room.off('trackSubscribed', disableAudio)
+      room.off('participantConnected', disableAudio)
+    }
+  }, [room])
+
+  return null
+}
+
 // ========== 语音助手 UI 组件 ==========
 function VoiceAssistantUI() {
   const { state, audioTrack } = useVoiceAssistant()
@@ -123,7 +239,7 @@ function VoiceAssistantUI() {
     if (connectionState === ConnectionState.Connecting) return '连接中...'
     if (connectionState === ConnectionState.Reconnecting) return '重连中...'
     if (connectionState === ConnectionState.Disconnected) return '已断开'
-    
+
     switch (state) {
       case 'connecting': return '连接中...'
       case 'initializing': return '初始化...'
@@ -264,7 +380,7 @@ export default function App() {
         user_name: '用户',
         metadata: { client: 'simple-voice-client' },
       }
-      
+
       // 如果有开场白，添加到请求中
       if (presetMessage) {
         requestBody.preset_message = presetMessage
@@ -297,17 +413,17 @@ export default function App() {
       setConnecting(false)
     }
   }, [])
-  
+
   // 开发者弹窗状态
   const [devModal, setDevModal] = useState<{
     title: string
     steps: { icon: string; action: string; detail: string }[]
   } | null>(null)
-  
+
   // 模拟外卖送达通知 - 只通知机器人，不开启会话
   const simulateDeliveryArrived = useCallback(() => {
     console.log('📦 检测到外卖送达通知，通知机器人去取外卖...')
-    
+
     setDevModal({
       title: '📦 外卖已送达 - 流程演示',
       steps: [
@@ -337,7 +453,7 @@ ws.send(JSON.stringify({
       ],
     })
   }, [])
-  
+
   // 模拟外卖已取来 - 机器人取完后，主动开启会话通知用户
   const simulateDeliveryPickedUp = useCallback(() => {
     console.log('🍜 机器人已取回外卖，主动开启会话通知用户...')
@@ -385,9 +501,18 @@ ws.send(JSON.stringify({
               audio={true}
               video={false}
               onDisconnected={() => console.log('已断开连接')}
+              options={{
+                // 禁用浏览器音频输出，只通过机器人播放
+                audioCaptureDefaults: { echoCancellation: true, noiseSuppression: true },
+                publishDefaults: { audioPreset: undefined },
+              }}
             >
               <AgentSessionUI onRestart={handleRestart} />
-              <RoomAudioRenderer />
+              {/* 使用机器人扬声器播放，不在浏览器播放音频 */}
+              <RobotTTSBridge />
+              {/* <RoomAudioRenderer /> - 已禁用，改用机器人播放 */}
+              {/* 添加禁音组件来阻止自动播放 */}
+              <DisableAudioOutput />
             </LiveKitRoom>
           )}
 
@@ -399,7 +524,7 @@ ws.send(JSON.stringify({
                 开始对话
               </button>
               <p style={styles.startHint}>点击按钮开始与 AI 助手交流</p>
-              
+
               {/* 模拟按钮区 */}
               <div style={styles.simulateSection}>
                 <div style={styles.simulateTitle}>🧪 模拟场景</div>
@@ -423,7 +548,7 @@ ws.send(JSON.stringify({
           💡 请确保浏览器已授权麦克风权限
         </div>
       </div>
-      
+
       {/* 开发者弹窗 */}
       {devModal && (
         <div style={styles.modalOverlay} onClick={() => setDevModal(null)}>
