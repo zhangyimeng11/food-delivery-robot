@@ -14,7 +14,7 @@ import '@livekit/components-styles'
 
 // ========== 配置 ==========
 const CONFIG = {
-  DEPLOYMENT_SLUG: '外卖助手-1765760043207',
+  DEPLOYMENT_SLUG: '外卖助手-1765480093368',
   API_BASE_URL: '/api/v1',
 }
 
@@ -123,7 +123,7 @@ function VoiceAssistantUI() {
     if (connectionState === ConnectionState.Connecting) return '连接中...'
     if (connectionState === ConnectionState.Reconnecting) return '重连中...'
     if (connectionState === ConnectionState.Disconnected) return '已断开'
-    
+
     switch (state) {
       case 'connecting': return '连接中...'
       case 'initializing': return '初始化...'
@@ -264,7 +264,7 @@ export default function App() {
         user_name: '用户',
         metadata: { client: 'simple-voice-client' },
       }
-      
+
       // 如果有开场白，添加到请求中
       if (presetMessage) {
         requestBody.preset_message = presetMessage
@@ -297,17 +297,17 @@ export default function App() {
       setConnecting(false)
     }
   }, [])
-  
+
   // 开发者弹窗状态
   const [devModal, setDevModal] = useState<{
     title: string
     steps: { icon: string; action: string; detail: string }[]
   } | null>(null)
-  
+
   // 模拟外卖送达通知 - 只通知机器人，不开启会话
   const simulateDeliveryArrived = useCallback(() => {
     console.log('📦 检测到外卖送达通知，通知机器人去取外卖...')
-    
+
     setDevModal({
       title: '📦 外卖已送达 - 流程演示',
       steps: [
@@ -337,7 +337,7 @@ ws.send(JSON.stringify({
       ],
     })
   }, [])
-  
+
   // 模拟外卖已取来 - 机器人取完后，主动开启会话通知用户
   const simulateDeliveryPickedUp = useCallback(() => {
     console.log('🍜 机器人已取回外卖，主动开启会话通知用户...')
@@ -399,7 +399,7 @@ ws.send(JSON.stringify({
                 开始对话
               </button>
               <p style={styles.startHint}>点击按钮开始与 AI 助手交流</p>
-              
+
               {/* 模拟按钮区 */}
               <div style={styles.simulateSection}>
                 <div style={styles.simulateTitle}>🧪 模拟场景</div>
@@ -423,7 +423,7 @@ ws.send(JSON.stringify({
           💡 请确保浏览器已授权麦克风权限
         </div>
       </div>
-      
+
       {/* 开发者弹窗 */}
       {devModal && (
         <div style={styles.modalOverlay} onClick={() => setDevModal(null)}>
