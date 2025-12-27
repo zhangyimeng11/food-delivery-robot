@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  # MCP 服务 - 美团拼好饭自动化
+  food-delivery-mcp:
+    build:
+      context: ./food-delivery-mcp
+      dockerfile: Dockerfile
+    container_name: food-delivery-mcp
+    ports:
+      - "8765:8765"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OPENAI_BASE_URL=${OPENAI_BASE_URL:-}
+      - PHONE_IP=${PHONE_IP:-192.168.124.9}
+      - ADB_PORT=${ADB_PORT:-5555}
+    volumes:
+      # 挂载配置文件（可选，用于覆盖默认配置）
+      - ./food-delivery-mcp/config.yaml:/app/config.yaml:ro
+    networks:
+      - food-delivery-network
+    restart: unless-stopped
+
+  # 语音客户端前端
+  simple-voice-client:
+    build:
+      context: ./simple-voice-client
+      dockerfile: Dockerfile
+    container_name: simple-voice-client
+    ports:
+      - "3001:80"
+    environment:
+      - VITE_LIVEKIT_URL=${VITE_LIVEKIT_URL:-}
+      - VITE_API_URL=${VITE_API_URL:-}
+    depends_on:
+      - food-delivery-mcp
+    networks:
+      - food-delivery-network
+    restart: unless-stopped
+
+networks:
+  food-delivery-network:
+    driver: bridge
