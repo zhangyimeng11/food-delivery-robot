@@ -86,6 +86,48 @@ async def confirm_payment() -> dict:
     return result
 
 
+@mcp.tool()
+async def execute_task(task_description: str) -> dict:
+    """
+    执行自由任务 - 让 AI Agent 自主操作手机完成任务
+    
+    这是一个通用的任务执行接口，不再局限于固定流程。
+    DroidRun Agent 会自动理解屏幕内容，决定如何操作手机。
+    
+    适用场景：
+    - 搜索和浏览：搜索特定餐品、查看优惠
+    - 订单操作：查看历史订单、取消订单
+    - 探索功能：查看优惠券、会员信息
+    - 任何美团 App 内的操作
+    
+    Args:
+        task_description: 任务描述，用自然语言说明想做什么
+            示例：
+            - "打开美团拼好饭，搜索牛肉面，告诉我有哪些选择"
+            - "帮我下单第一个搜索结果"  
+            - "查看我的历史订单"
+            - "看看有什么8元以下的套餐"
+            - "取消最近的一个订单"
+            - "查看我有哪些优惠券"
+    
+    Returns:
+        dict: {
+            "success": bool,        # 是否成功
+            "message": str,         # 可直接朗读给用户的结果消息
+            "data": dict | None,    # 结构化数据（如搜索结果列表）
+            "task": str,            # 原始任务描述
+        }
+        
+    注意：
+    - 这个工具执行时间较长（通常 30-60 秒），因为 Agent 需要多步操作
+    - 如果只是简单点餐，建议使用 search_meals + place_order 更快
+    - 对于复杂或非标准流程任务，使用这个工具更合适
+    """
+    from .automation.execute_task import execute_task as _execute_task
+    result = await _execute_task(task_description)
+    return result
+
+
 # ========== 自定义路由 ==========
 
 @mcp.custom_route("/health", methods=["GET"])

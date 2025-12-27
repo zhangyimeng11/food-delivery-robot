@@ -24,12 +24,25 @@ for key in ['http_proxy', 'https_proxy', 'HTTP_PROXY', 'HTTPS_PROXY', 'all_proxy
     os.environ.pop(key, None)
 
 # 美团外卖包名
-# 美团外卖包名
 MEITUAN_PACKAGE = "com.sankuai.meituan.takeoutnew"
 
-# ADB 连接配置
-PHONE_IP = os.environ.get("PHONE_IP", "192.168.1.196")
-ADB_PORT = int(os.environ.get("ADB_PORT", "5555"))
+# ADB 连接配置 - 从配置文件读取
+def _get_phone_config():
+    """获取手机配置"""
+    from src.config import get_config
+    config = get_config()
+    return config.phone.ip, config.phone.adb_port
+
+# 延迟加载
+_phone_ip = None
+_adb_port = None
+
+def _get_adb_target():
+    """获取 ADB 连接目标"""
+    global _phone_ip, _adb_port
+    if _phone_ip is None:
+        _phone_ip, _adb_port = _get_phone_config()
+    return _phone_ip, _adb_port
 
 # LLM 配置
 LLM_CONFIG = {
@@ -112,7 +125,8 @@ async def _cancel_current_task():
 
 async def _ensure_adb_connection() -> bool:
     """确保 ADB 连接，如果断开则尝试重连"""
-    target = f"{PHONE_IP}:{ADB_PORT}"
+    phone_ip, adb_port = _get_adb_target()
+    target = f"{phone_ip}:{adb_port}"
     
     try:
         # 1. 检查当前是否已连接
@@ -193,7 +207,7 @@ async def _search_meals_impl(keyword: str) -> dict:
         return {
             "success": False, 
             "keyword": keyword, 
-            "error": f"无法连接到手机 ({PHONE_IP}:{ADB_PORT})，请检查网络或手机状态"
+            "error": f"无法连接到手机，请检查网络或手机状态"
         }
 
     tools = AdbTools()
@@ -481,7 +495,7 @@ async def _place_order_impl(meal_name: str) -> dict:
         return {
             "success": False, 
             "meal_name": meal_name, 
-            "error": f"无法连接到手机 ({PHONE_IP}:{ADB_PORT})"
+            "error": "无法连接到手机，请检查网络或手机状态"
         }
 
     tools = AdbTools()
@@ -614,7 +628,7 @@ async def _confirm_payment_impl() -> dict:
     if not await _ensure_adb_connection():
         return {
             "success": False, 
-            "error": f"无法连接到手机 ({PHONE_IP}:{ADB_PORT})"
+            "error": "无法连接到手机，请检查网络或手机状态"
         }
 
     tools = AdbTools()

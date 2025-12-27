@@ -12,6 +12,12 @@ class ServerConfig(BaseModel):
     port: int = 8765
 
 
+class PhoneConfig(BaseModel):
+    """手机配置（ADB 连接）"""
+    ip: str = "192.168.124.9"
+    adb_port: int = 5555
+
+
 class LLMConfig(BaseModel):
     """LLM 配置"""
     api_key: str = ""  # 留空则使用环境变量 OPENAI_API_KEY
@@ -20,6 +26,7 @@ class LLMConfig(BaseModel):
 class Config(BaseModel):
     """应用配置"""
     server: ServerConfig = ServerConfig()
+    phone: PhoneConfig = PhoneConfig()
     llm: LLMConfig = LLMConfig()
 
 
