@@ -11,11 +11,14 @@ import {
 } from '@livekit/components-react'
 import { ConnectionState } from 'livekit-client'
 import '@livekit/components-styles'
+import { RobotAudioBridge } from './RobotAudioBridge'
 
 // ========== 配置 ==========
 const CONFIG = {
   DEPLOYMENT_SLUG: '外卖助手-1765480093368',
   API_BASE_URL: '/api/v1',
+  // 是否启用机器人音频桥接（通过机器人扬声器播放 Agent 音频）
+  ROBOT_AUDIO_ENABLED: true,
 }
 
 // ========== 类型定义 ==========
@@ -387,7 +390,10 @@ ws.send(JSON.stringify({
               onDisconnected={() => console.log('已断开连接')}
             >
               <AgentSessionUI onRestart={handleRestart} />
+              {/* 电脑也播放音频 */}
               <RoomAudioRenderer />
+              {/* 同时转发到机器人扬声器 */}
+              <RobotAudioBridge enabled={CONFIG.ROBOT_AUDIO_ENABLED} />
             </LiveKitRoom>
           )}
 
