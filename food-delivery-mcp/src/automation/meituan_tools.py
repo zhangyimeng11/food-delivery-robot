@@ -290,7 +290,7 @@ async def _search_meals_impl(keyword: str) -> dict:
         _save_debug_step(session_id, "03_click_phf", [], f"点击拼好饭 index={phf_index}")
     
     # 步骤 5: 点击搜索框
-    await asyncio.sleep(2)
+    await asyncio.sleep(4)  # 等待拼好饭页面完全加载
     desc, _, elements, phone_state = await tools.get_state()
     _save_debug_step(session_id, "04_phf_page", elements, "拼好饭页面")
     
