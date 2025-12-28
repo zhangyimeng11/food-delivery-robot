@@ -1,0 +1,16 @@
+[Unit]
+Description=Robot Audio Bridge Service
+After=network.target
+
+[Service]
+Type=simple
+User=unitree
+WorkingDirectory=/home/unitree
+ExecStart=/usr/bin/python3 /home/unitree/robot_audio_bridge.py
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
