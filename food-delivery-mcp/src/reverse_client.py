@@ -230,7 +230,7 @@ async def main():
     
     # 从配置或环境变量获取 Relay URL
     import os
-    relay_url = os.getenv("MCP_RELAY_URL", "ws://100.86.205.14:8000/api/v1/mcp/ws/food-delivery-mcp")
+    relay_url = os.getenv("MCP_RELAY_URL", "wss://studio.seekzing.com/api/v1/mcp/ws/food-delivery-mcp")
     
     logger.info("=" * 50)
     logger.info("🤖 MCP 反向连接客户端启动")
