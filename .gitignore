@@ -1,1 +1,38 @@
+# External repositories
 external_repos/
+
+# Robot workspace (contains binaries and build artifacts)
+agent_ws/
+
+# Node.js dependencies
+node_modules/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# Debug outputs
+debug_output/
+*.log
+
+# IDE and OS files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Build outputs
+build/
+dist/
+*.egg-info/
+
+# Temporary files
+*.tmp
+*.temp
+page_elements.json
