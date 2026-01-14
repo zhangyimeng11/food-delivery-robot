@@ -527,43 +527,81 @@ async def _place_order_impl(meal_name: str) -> dict:
     # 步骤 6: 等待进入支付页面
     await asyncio.sleep(2)
     
-    # 步骤 7: 验证到达支付页面并提取最终价格
+    # 步骤 7: 验证到达支付页面并使用 LLM 提取最终价格
     desc, _, elements, phone_state = await tools.get_state()
     
-    payment_btn_index = None
+    # 检查是否到达支付页面
+    is_payment_page = False
     for el in elements:
         text = el.get('text', '')
-        if text == '极速支付':
-            payment_btn_index = el.get('index')
+        if '支付' in text or '实付' in text or '需支付' in text:
+            is_payment_page = True
             break
     
-    if payment_btn_index:
-        # 先找到"¥"的位置
-        yuan_index = None
+    if is_payment_page:
+        # 构建元素列表给 LLM 分析
+        elements_for_llm = []
         for el in elements:
             text = el.get('text', '')
-            idx = el.get('index')
-            if text == '¥' and idx < payment_btn_index:
-                yuan_index = idx
+            bounds = el.get('bounds', '')
+            idx = el.get('index', 0)
+            if text and len(text.strip()) > 0:
+                elements_for_llm.append({
+                    'index': idx,
+                    'text': text,
+                    'bounds': bounds
+                })
         
-        if yuan_index:
-            # 收集¥和极速支付之间的价格字符
-            price_parts = []
-            for el in elements:
-                idx = el.get('index')
-                text = el.get('text', '')
-                if yuan_index <= idx < payment_btn_index and text.strip():
-                    if text in ['¥', '.'] or text.isdigit():
-                        price_parts.append((idx, text))
+        elements_json = json.dumps(elements_for_llm, ensure_ascii=False, indent=2)
+        
+        prompt = f"""你是一个支付页面分析助手。下面是美团外卖支付页面的元素列表。
+
+页面元素：
+{elements_json}
+
+请分析并提取用户需要支付的**最终金额**。
+
+注意事项：
+1. 支付金额通常在"需支付"、"实付"、"合计"附近
+2. 金额由多个相邻元素组成：¥ 符号 + 整数部分 + 小数部分（如 ¥ + 16 + .7 = ¥16.7）
+3. 忽略优惠金额、原价等其他金额
+4. 金额应该在合理范围内（通常 1-200 元）
+5. 根据 bounds 坐标判断哪些元素属于同一个价格
+
+请只返回一个 JSON 对象，格式如下：
+{{
+    "final_price": "¥xx.x"
+}}
+
+只返回 JSON，不要其他说明文字。"""
+
+        try:
+            client = OpenAI(
+                api_key=LLM_CONFIG["api_key"],
+                base_url=LLM_CONFIG["base_url"],
+            )
             
-            price_parts.sort(key=lambda x: x[0])
-            final_price = ''.join([text for idx, text in price_parts])
+            response = client.chat.completions.create(
+                model=LLM_CONFIG["model"],
+                messages=[{"role": "user", "content": prompt}],
+                temperature=0.1,
+            )
             
-            return {
-                "success": True,
-                "meal_name": meal_name,
-                "final_price": final_price
-            }
+            result_text = response.choices[0].message.content
+            json_match = re.search(r'\{.*\}', result_text, re.DOTALL)
+            
+            if json_match:
+                result_json = json.loads(json_match.group())
+                final_price = result_json.get('final_price', '')
+                
+                if final_price:
+                    return {
+                        "success": True,
+                        "meal_name": meal_name,
+                        "final_price": final_price
+                    }
+        except Exception as e:
+            logger.error(f"LLM 价格提取失败: {e}") if 'logger' in dir() else print(f"[ERROR] LLM 价格提取失败: {e}")
     
     return {
         "success": False,
